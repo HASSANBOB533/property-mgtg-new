@@ -25,11 +25,11 @@ export default function ComparisonTable() {
           <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
             <thead>
               <tr className="bg-[#2F63AD]">
-                <th className="text-left py-3 px-6 font-semibold text-white text-lg">Feature</th>
-                <th className="text-center py-3 px-6 font-semibold text-white text-lg">
+                <th className="text-left py-2 px-4 font-semibold text-white">Feature</th>
+                <th className="text-center py-2 px-4 font-semibold text-white">
                   {t('bob')}
                 </th>
-                <th className="text-center py-3 px-6 font-semibold text-white text-lg">
+                <th className="text-center py-2 px-4 font-semibold text-white">
                   {t('typical')}
                 </th>
               </tr>
@@ -42,16 +42,16 @@ export default function ComparisonTable() {
                     idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
                   }`}
                 >
-                  <td className="py-3 px-6 text-dark-text font-medium">
+                  <td className="py-2 px-4 text-dark-text">
                     {t(`features.${feature}`)}
                   </td>
-                  <td className="text-center py-3 px-6">
-                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#F9DE6A] text-[#2F63AD] text-xl font-bold">
+                  <td className="text-center py-2 px-4">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#F9DE6A] text-[#2F63AD] text-lg font-bold">
                       ✓
                     </span>
                   </td>
-                  <td className="text-center py-3 px-6">
-                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gray-200 text-gray-500 text-xl font-bold">
+                  <td className="text-center py-2 px-4">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-200 text-gray-500 text-lg font-bold">
                       ✗
                     </span>
                   </td>
