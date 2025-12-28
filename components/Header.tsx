@@ -24,27 +24,15 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center gap-3" aria-label="Best of Bedz Home">
-            {/* Use the updated PNG logo which matches the official brand colors.  */}
+          <Link href={`/${locale}`} className="flex items-center" aria-label="Best of Bedz Home">
             <Image 
-              src="/images/logo.png" 
-              alt="Best of Bedz Logo" 
-              width={50} 
-              height={50}
-              className="w-12 h-12 lg:w-14 lg:h-14"
+              src="/bob-logo.png" 
+              alt="Best of Bedz for Owners" 
+              width={180} 
+              height={180}
+              className="h-12 w-auto md:h-14 lg:h-16"
               priority
             />
-            <div className="flex flex-col">
-              {/* Render the acronym using brand colours: blue for the "B"s and yellow for the "O". */}
-              <div className="text-3xl lg:text-4xl font-bold text-blue-primary" aria-label="BOB">
-                <span className="text-blue-primary">B</span>
-                <span className="text-yellow-primary">O</span>
-                <span className="text-blue-primary">B</span>
-              </div>
-              <div className="text-xs lg:text-sm font-semibold text-dark-text -mt-1">
-                Best of Bedz
-              </div>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
