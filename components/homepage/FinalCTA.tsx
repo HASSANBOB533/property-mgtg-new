@@ -16,12 +16,14 @@ export default function FinalCTA() {
         <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
           {t('subtitle')}
         </p>
-        <Link
-          href={`/${locale}/list-property`}
+        <a
+          href="https://cal.com/hassan-ahmed-27rg6z/property-owner-meeting"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block bg-white text-blue-primary px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all shadow-xl"
         >
           {t('button')}
-        </Link>
+        </a>
       </div>
     </section>
   );

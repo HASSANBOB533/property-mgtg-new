@@ -66,12 +66,14 @@ export default function Header() {
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
-            <Link
-              href={`/${locale}/list-property`}
+            <a
+              href="https://cal.com/hassan-ahmed-27rg6z/property-owner-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:block bg-blue-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
             >
               {t('getEvaluation')}
-            </Link>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
