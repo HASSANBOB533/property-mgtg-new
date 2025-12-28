@@ -63,10 +63,10 @@ function BeforeAfterSlider({before, after, alt}: BeforeAfterImage) {
             priority
           />
         ) : (
-          <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-green-primary/20 to-green-primary/40">
+          <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-[#2F63AD]/20 to-[#2F63AD]/40">
             <div className="text-6xl mb-4">✨</div>
-            <div className="text-xl font-semibold text-dark-text">After</div>
-            <div className="text-sm text-dark-text/70 mt-2">Image Coming Soon</div>
+            <div className="text-xl font-semibold text-[#2F63AD]">After</div>
+            <div className="text-sm text-[#2F63AD]/70 mt-2">Image Coming Soon</div>
           </div>
         )}
       </div>
@@ -86,10 +86,10 @@ function BeforeAfterSlider({before, after, alt}: BeforeAfterImage) {
             priority
           />
         ) : (
-          <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-red-accent/20 to-red-accent/40">
+          <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-gray-400/20 to-gray-400/40">
             <div className="text-6xl mb-4">📷</div>
-            <div className="text-xl font-semibold text-dark-text">Before</div>
-            <div className="text-sm text-dark-text/70 mt-2">Image Coming Soon</div>
+            <div className="text-xl font-semibold text-[#2F63AD]">Before</div>
+            <div className="text-sm text-[#2F63AD]/70 mt-2">Image Coming Soon</div>
           </div>
         )}
       </div>
@@ -117,10 +117,10 @@ function BeforeAfterSlider({before, after, alt}: BeforeAfterImage) {
       </div>
 
       {/* Labels */}
-      <div className="absolute top-4 left-4 bg-red-accent/90 text-white px-3 py-1 rounded-full text-sm font-semibold">
+      <div className="absolute top-4 left-4 bg-gray-600/90 text-white px-3 py-1 rounded-full text-sm font-semibold">
         Before
       </div>
-      <div className="absolute top-4 right-4 bg-green-primary/90 text-white px-3 py-1 rounded-full text-sm font-semibold">
+      <div className="absolute top-4 right-4 bg-[#2F63AD]/90 text-white px-3 py-1 rounded-full text-sm font-semibold">
         After
       </div>
     </div>
@@ -213,23 +213,23 @@ export default function ProjectGallery() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-dark-text mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-3">
           {t('title')}
         </h2>
-        <p className="text-center text-dark-text/70 mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-[#2F63AD]/70 mb-10 max-w-2xl mx-auto">
           Drag the slider to see the transformation of our design projects
         </p>
 
 
         {/* Marina 5 Resort Project */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <div className="bg-gradient-to-br from-cream to-yellow-primary/10 rounded-2xl p-8 mb-8">
-            <h3 className="text-2xl font-bold text-dark-text mb-4">
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="bg-gradient-to-br from-[#2F63AD]/5 to-[#F9DE6A]/10 rounded-2xl p-6 mb-6">
+            <h3 className="text-2xl font-bold text-[#2F63AD] mb-3">
               {t('marina.title')}
             </h3>
-            <div className="grid md:grid-cols-3 gap-4 text-sm text-dark-text/80">
+            <div className="grid md:grid-cols-3 gap-4 text-sm text-[#2F63AD]/80">
               <div>
                 <span className="font-semibold">📍 Location:</span> {t('marina.location')}
               </div>
@@ -247,7 +247,7 @@ export default function ProjectGallery() {
             {marinaRooms.map((room, idx) => (
               <div key={idx} className="group">
                 <BeforeAfterSlider {...room} />
-                <p className="text-center mt-3 text-dark-text/80 font-medium">
+                <p className="text-center mt-3 text-[#2F63AD]/80 font-medium">
                   {room.alt}
                 </p>
               </div>
@@ -255,20 +255,20 @@ export default function ProjectGallery() {
           </div>
 
           {/* Instructions for Marina */}
-          <div className="mt-8 bg-blue-primary/5 border border-blue-primary/20 rounded-lg p-6 text-center">
-            <p className="text-dark-text/80">
+          <div className="mt-6 bg-[#2F63AD]/5 border border-[#2F63AD]/20 rounded-lg p-4 text-center">
+            <p className="text-[#2F63AD]/80">
               <span className="font-semibold">💡 Pro Tip:</span> Click and drag the slider or use touch to compare before and after images
             </p>
           </div>
         </div>
 
         {/* Stella Sidi Abdelrahman Renovation Project */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <div className="bg-gradient-to-br from-cream to-yellow-primary/10 rounded-2xl p-8 mb-8">
-            <h3 className="text-2xl font-bold text-dark-text mb-4">
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="bg-gradient-to-br from-[#2F63AD]/5 to-[#F9DE6A]/10 rounded-2xl p-6 mb-6">
+            <h3 className="text-2xl font-bold text-[#2F63AD] mb-3">
               {t('stella2.title')}
             </h3>
-            <div className="grid md:grid-cols-3 gap-4 text-sm text-dark-text/80">
+            <div className="grid md:grid-cols-3 gap-4 text-sm text-[#2F63AD]/80">
               <div>
                 <span className="font-semibold">📍 Location:</span> {t('stella2.location')}
               </div>
@@ -286,7 +286,7 @@ export default function ProjectGallery() {
             {stella2Rooms.map((room, idx) => (
               <div key={idx} className="group">
                 <BeforeAfterSlider {...room} />
-                <p className="text-center mt-3 text-dark-text/80 font-medium">
+                <p className="text-center mt-3 text-[#2F63AD]/80 font-medium">
                   {room.alt}
                 </p>
               </div>
@@ -294,20 +294,20 @@ export default function ProjectGallery() {
           </div>
 
           {/* Instructions for Stella 2 */}
-          <div className="mt-8 bg-blue-primary/5 border border-blue-primary/20 rounded-lg p-6 text-center">
-            <p className="text-dark-text/80">
+          <div className="mt-6 bg-[#2F63AD]/5 border border-[#2F63AD]/20 rounded-lg p-4 text-center">
+            <p className="text-[#2F63AD]/80">
               <span className="font-semibold">💡 Pro Tip:</span> Click and drag the slider or use touch to compare before and after images
             </p>
           </div>
         </div>
 
         {/* Marina 7 Resort Project */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <div className="bg-gradient-to-br from-cream to-yellow-primary/10 rounded-2xl p-8 mb-8">
-            <h3 className="text-2xl font-bold text-dark-text mb-4">
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="bg-gradient-to-br from-[#2F63AD]/5 to-[#F9DE6A]/10 rounded-2xl p-6 mb-6">
+            <h3 className="text-2xl font-bold text-[#2F63AD] mb-3">
               {t('marina7.title')}
             </h3>
-            <div className="grid md:grid-cols-3 gap-4 text-sm text-dark-text/80">
+            <div className="grid md:grid-cols-3 gap-4 text-sm text-[#2F63AD]/80">
               <div>
                 <span className="font-semibold">📍 Location:</span> {t('marina7.location')}
               </div>
@@ -325,7 +325,7 @@ export default function ProjectGallery() {
             {marina7Rooms.map((room, idx) => (
               <div key={idx} className="group">
                 <BeforeAfterSlider {...room} />
-                <p className="text-center mt-3 text-dark-text/80 font-medium">
+                <p className="text-center mt-3 text-[#2F63AD]/80 font-medium">
                   {room.alt}
                 </p>
               </div>
@@ -333,8 +333,8 @@ export default function ProjectGallery() {
           </div>
 
           {/* Instructions for Marina 7 */}
-          <div className="mt-8 bg-blue-primary/5 border border-blue-primary/20 rounded-lg p-6 text-center">
-            <p className="text-dark-text/80">
+          <div className="mt-6 bg-[#2F63AD]/5 border border-[#2F63AD]/20 rounded-lg p-4 text-center">
+            <p className="text-[#2F63AD]/80">
               <span className="font-semibold">💡 Pro Tip:</span> Click and drag the slider or use touch to compare before and after images
             </p>
           </div>
