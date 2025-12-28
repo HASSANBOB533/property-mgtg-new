@@ -17,7 +17,7 @@ export default function DesignProcess() {
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-dark-text mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-12">
           {t('title')}
         </h2>
 
