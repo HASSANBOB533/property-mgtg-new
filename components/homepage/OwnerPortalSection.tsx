@@ -50,7 +50,7 @@ export default function OwnerPortalSection() {
           </div>
 
           <a
-            href="https://app.guesty.com"
+            href="https://bestofbedz.guestyowners.com/login"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-dark-text px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all"

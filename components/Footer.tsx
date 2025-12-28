@@ -60,7 +60,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="https://app.guesty.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
+                <a href="https://bestofbedz.guestyowners.com/login" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
                   {t('quickLinks.ownerPortal')}
                 </a>
               </li>

@@ -16,7 +16,7 @@ export default function Header() {
     {label: t('design'), href: `/${locale}/design`},
     {label: t('pricing'), href: `/${locale}#pricing`},
     {label: t('listProperty'), href: `/${locale}/list-property`},
-    {label: t('ownerPortal'), href: 'https://app.guesty.com', external: true},
+    {label: t('ownerPortal'), href: 'https://bestofbedz.guestyowners.com/login', external: true},
   ];
 
   return (

@@ -45,7 +45,7 @@ export default async function LocaleLayout({
         <meta property="og:url" content="https://bobpropertymanagement.com/" />
         <meta property="og:title" content="Best of Bedz - Premium Property Management Services" />
         <meta property="og:description" content="Maximize your rental revenue with professional property management, interior design, and marketing services." />
-        <meta property="og:image" content="https://bobpropertymanagement.com/images/og-image.svg" />
+        <meta property="og:image" content="https://property-mgtg-new.vercel.app/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Best of Bedz" />
@@ -56,11 +56,12 @@ export default async function LocaleLayout({
         <meta name="twitter:url" content="https://bobpropertymanagement.com/" />
         <meta name="twitter:title" content="Best of Bedz - Premium Property Management" />
         <meta name="twitter:description" content="Professional property management services to maximize your rental revenue" />
-        <meta name="twitter:image" content="https://bobpropertymanagement.com/images/og-image.svg" />
+        <meta name="twitter:image" content="https://property-mgtg-new.vercel.app/og-image.jpg" />
         
         {/* Favicon and Icons */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.svg" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#3B6CB4" />
         
