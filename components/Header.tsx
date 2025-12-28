@@ -19,26 +19,26 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white border-b-2 border-[#F9DE6A] shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center gap-3" aria-label="Best of Bedz Home">
+          <Link href={`/${locale}`} className="flex items-center gap-3 group" aria-label="Best of Bedz Home">
             <Image 
               src="/full-logo.png" 
               alt="Best of Bedz for Owners" 
               width={200} 
               height={200}
-              className="h-14 w-auto md:h-16 lg:h-20"
+              className="h-14 w-auto md:h-16 lg:h-20 transition-transform group-hover:scale-105"
               priority
             />
-            <span className="text-base md:text-lg lg:text-xl font-bold text-blue-primary">
+            <span className="text-base md:text-lg lg:text-xl font-bold text-[#2F63AD] transition-colors group-hover:text-[#F9DE6A]">
               Best of Bedz
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
               item.external ? (
                 <a
@@ -46,17 +46,19 @@ export default function Header() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-dark-text hover:text-blue-primary transition-colors font-medium"
+                  className="relative text-[#2F63AD] font-semibold text-base hover:text-[#F9DE6A] transition-all duration-300 group"
                 >
                   {item.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#F9DE6A] group-hover:w-full transition-all duration-300"></span>
                 </a>
               ) : (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-dark-text hover:text-blue-primary transition-colors font-medium"
+                  className="relative text-[#2F63AD] font-semibold text-base hover:text-[#F9DE6A] transition-all duration-300 group"
                 >
                   {item.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#F9DE6A] group-hover:w-full transition-all duration-300"></span>
                 </Link>
               )
             ))}
@@ -69,7 +71,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-dark-text"
+              className="lg:hidden p-2 text-[#2F63AD] hover:text-[#F9DE6A] transition-colors"
               aria-label="Toggle menu"
             >
               <svg
@@ -93,7 +95,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-gray-200">
+          <nav className="lg:hidden py-4 border-t-2 border-[#F9DE6A] bg-gradient-to-b from-white to-gray-50">
             {navItems.map((item) => (
               item.external ? (
                 <a
@@ -101,7 +103,7 @@ export default function Header() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block py-3 text-dark-text hover:text-blue-primary transition-colors font-medium"
+                  className="block py-3 px-4 text-[#2F63AD] font-semibold hover:bg-[#F9DE6A] hover:text-white transition-all duration-300 rounded-lg mx-2 my-1"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -110,7 +112,7 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="block py-3 text-dark-text hover:text-blue-primary transition-colors font-medium"
+                  className="block py-3 px-4 text-[#2F63AD] font-semibold hover:bg-[#F9DE6A] hover:text-white transition-all duration-300 rounded-lg mx-2 my-1"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
