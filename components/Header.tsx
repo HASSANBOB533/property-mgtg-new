@@ -26,11 +26,11 @@ export default function Header() {
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center gap-3" aria-label="Best of Bedz Home">
             <Image 
-              src="/header-logo.png" 
-              alt="Best of Bedz Logo" 
-              width={130} 
-              height={72}
-              className="h-12 w-auto md:h-14 lg:h-16"
+              src="/full-logo.png" 
+              alt="Best of Bedz for Owners" 
+              width={200} 
+              height={200}
+              className="h-14 w-auto md:h-16 lg:h-20"
               priority
             />
             <span className="text-base md:text-lg lg:text-xl font-bold text-blue-primary">
