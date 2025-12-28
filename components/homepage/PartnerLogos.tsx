@@ -1,13 +1,15 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function PartnerLogos() {
   const partners = [
-    'Airbnb',
-    'Booking.com',
-    'Vrbo',
-    'Expedia',
-    'Agoda',
-    'Trip.com'
+    { name: 'Airbnb', logo: '/partner-airbnb.png', width: 120, height: 40 },
+    { name: 'Booking.com', logo: '/partner-booking.png', width: 140, height: 40 },
+    { name: 'Vrbo', logo: '/partner-vrbo.png', width: 100, height: 40 },
+    { name: 'Expedia', logo: '/partner-expedia.png', width: 120, height: 40 },
+    { name: 'Agoda', logo: '/partner-agoda.jpg', width: 100, height: 40 },
+    { name: 'Trip.com', logo: '/partner-trip.png', width: 120, height: 40 }
   ];
 
   return (
@@ -18,13 +20,20 @@ export default function PartnerLogos() {
             Our Distribution Partners
           </h3>
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
           {partners.map((partner) => (
             <div
-              key={partner}
-              className="text-dark-text/40 font-bold text-xl md:text-2xl"
+              key={partner.name}
+              className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
             >
-              {partner}
+              <Image
+                src={partner.logo}
+                alt={`${partner.name} logo`}
+                width={partner.width}
+                height={partner.height}
+                className="object-contain"
+                style={{ width: 'auto', height: '40px' }}
+              />
             </div>
           ))}
         </div>
