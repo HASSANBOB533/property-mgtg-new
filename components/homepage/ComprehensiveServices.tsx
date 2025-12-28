@@ -6,13 +6,13 @@ export default function ComprehensiveServices() {
   const t = useTranslations('comprehensiveServices');
 
   const services = [
-    {key: 'design', icon: '🎨', color: 'from-teal-400 to-teal-500'},
-    {key: 'listing', icon: '📸', color: 'from-blue-400 to-blue-500'},
-    {key: 'revenue', icon: '💰', color: 'from-yellow-400 to-yellow-500'},
-    {key: 'guest', icon: '👥', color: 'from-rose-400 to-rose-500'},
-    {key: 'property', icon: '🔧', color: 'from-sky-400 to-sky-500'},
-    {key: 'financial', icon: '📊', color: 'from-emerald-400 to-emerald-500'},
-    {key: 'legal', icon: '⚖️', color: 'from-slate-500 to-slate-600'},
+    {key: 'design', icon: '🎨', color: 'from-blue-50 to-blue-100 border border-blue-200'},
+    {key: 'listing', icon: '📸', color: 'from-indigo-50 to-indigo-100 border border-indigo-200'},
+    {key: 'revenue', icon: '💰', color: 'from-amber-50 to-amber-100 border border-amber-200'},
+    {key: 'guest', icon: '👥', color: 'from-rose-50 to-rose-100 border border-rose-200'},
+    {key: 'property', icon: '🔧', color: 'from-cyan-50 to-cyan-100 border border-cyan-200'},
+    {key: 'financial', icon: '📊', color: 'from-emerald-50 to-emerald-100 border border-emerald-200'},
+    {key: 'legal', icon: '⚖️', color: 'from-slate-50 to-slate-100 border border-slate-200'},
   ];
 
   return (
@@ -28,7 +28,7 @@ export default function ComprehensiveServices() {
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center"
             >
               <div className="flex justify-center mb-4">
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-3xl shadow-lg`}>
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-2xl`}>
                   {service.icon}
                 </div>
               </div>
