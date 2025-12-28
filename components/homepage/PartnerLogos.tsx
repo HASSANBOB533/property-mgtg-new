@@ -24,7 +24,7 @@ export default function PartnerLogos() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+              className="transition-transform duration-300 hover:scale-110"
             >
               <Image
                 src={partner.logo}
