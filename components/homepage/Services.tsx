@@ -14,16 +14,16 @@ export default function Services() {
           {t('title')}
         </h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Property Management - Professional Blue (Booking.com style) */}
-          <div className="bg-gradient-to-br from-[#003580] to-[#0057B8] text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+          {/* Property Management - BOB Brand Blue #2F63AD */}
+          <div className="bg-gradient-to-br from-[#2F63AD] to-[#1e4a8a] text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
             <div className="text-5xl mb-4">🏢</div>
             <h3 className="text-2xl font-bold mb-2">{t('propertyManagement.title')}</h3>
             <p className="text-lg opacity-90">{t('propertyManagement.subtitle')}</p>
           </div>
 
-          {/* Design & Furnishing - Vibrant Yellow/Gold */}
+          {/* Design & Furnishing - BOB Brand Yellow #F9DE6A */}
           <Link href={`/${locale}/design`}>
-            <div className="bg-gradient-to-br from-[#FFB800] to-[#FFA000] text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+            <div className="bg-gradient-to-br from-[#F9DE6A] to-[#f4d03f] text-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] cursor-pointer">
               <div className="text-5xl mb-4">🎨</div>
               <h3 className="text-2xl font-bold mb-2">{t('designFurnishing.title')}</h3>
               <p className="text-lg opacity-90">{t('designFurnishing.subtitle')}</p>
