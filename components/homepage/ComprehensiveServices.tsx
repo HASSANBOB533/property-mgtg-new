@@ -18,7 +18,7 @@ export default function ComprehensiveServices() {
   return (
     <section className="py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-dark-text mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-12">
           {t('title')}
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -32,10 +32,10 @@ export default function ComprehensiveServices() {
                   {service.icon}
                 </div>
               </div>
-              <h3 className="text-lg font-bold text-dark-text mb-2">
+              <h3 className="text-lg font-bold text-[#2F63AD] mb-2">
                 {t(`${service.key}.title`)}
               </h3>
-              <p className="text-sm text-dark-text/70">
+              <p className="text-sm text-[#2F63AD]/70">
                 {t(`${service.key}.description`)}
               </p>
             </div>

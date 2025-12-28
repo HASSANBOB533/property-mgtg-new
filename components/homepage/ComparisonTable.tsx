@@ -17,7 +17,7 @@ export default function ComparisonTable() {
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-dark-text mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-12">
           {t('title')}
         </h2>
 
@@ -42,7 +42,7 @@ export default function ComparisonTable() {
                     idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
                   }`}
                 >
-                  <td className="py-2 px-4 text-dark-text">
+                  <td className="py-2 px-4 text-[#2F63AD]">
                     {t(`features.${feature}`)}
                   </td>
                   <td className="text-center py-2 px-4">

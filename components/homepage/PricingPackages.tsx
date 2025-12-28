@@ -30,10 +30,10 @@ export default function PricingPackages() {
     <section id="pricing" className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-text mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2F63AD] mb-4">
             {t('title')}
           </h2>
-          <p className="text-lg text-dark-text/70">{t('subtitle')}</p>
+          <p className="text-lg text-[#2F63AD]/70">{t('subtitle')}</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -53,10 +53,10 @@ export default function PricingPackages() {
                   </div>
                 )}
 
-                <h3 className="text-2xl font-bold text-dark-text mb-2">
+                <h3 className="text-2xl font-bold text-[#2F63AD] mb-2">
                   {t(`${pkg.key}.title`)}
                 </h3>
-                <div className="text-3xl font-bold text-blue-primary mb-6">
+                <div className="text-3xl font-bold text-[#2F63AD] mb-6">
                   {t(`${pkg.key}.percentage`)}
                 </div>
 
@@ -64,7 +64,7 @@ export default function PricingPackages() {
                   {features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm">
                       <span className="text-green-primary mt-1">✓</span>
-                      <span className="text-dark-text/80">{feature}</span>
+                      <span className="text-[#2F63AD]/80">{feature}</span>
                     </li>
                   ))}
                 </ul>
