@@ -17,15 +17,15 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-dark-text text-white mt-20" role="contentinfo">
+    <footer className="bg-[#2F63AD] text-white mt-20" role="contentinfo">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
             <div className="text-2xl font-bold mb-4" aria-label="Best of Bedz">
-              <span className="text-red-accent">B</span>
-              <span className="text-green-primary">O</span>
-              <span className="text-yellow-primary">B</span>
+              <span className="text-[#2F63AD]">B</span>
+              <span className="text-[#F9DE6A]">O</span>
+              <span className="text-[#2F63AD]">B</span>
             </div>
             <p className="text-sm mb-4 opacity-90">{t('company.tagline')}</p>
             <address className="space-y-2 text-sm opacity-80 not-italic">
@@ -90,7 +90,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm opacity-70">
+        <div className="border-t border-[#F9DE6A]/30 mt-8 pt-8 text-center text-sm opacity-90">
           <p>© {new Date().getFullYear()} Best of Bedz. All rights reserved.</p>
         </div>
       </div>
