@@ -5,7 +5,7 @@
     "pricing": "Pricing",
     "listProperty": "List Property",
     "ownerPortal": "Owner Portal",
-    "getEvaluation": "Get Free Evaluation"
+    "getEvaluation": "Book Demo Call"
   },
   "hero": {
     "headline": "The Art of Property Management",
@@ -155,7 +155,7 @@
   "finalCTA": {
     "title": "Ready to Maximize Your Rental Income?",
     "subtitle": "Get a free property evaluation and discover your revenue potential",
-    "button": "Get Free Evaluation"
+    "button": "Book Demo Call"
   },
   "footer": {
     "company": {
@@ -340,8 +340,8 @@
     "confirmation": "We'll review your submission and contact you within 24-48 hours"
   },
   "scheduleMeeting": {
-    "title": "Schedule a Video Call",
+    "title": "Book a Demo Call",
     "subtitle": "Meet with our team to discuss your property",
-    "button": "Book Your Meeting"
+    "button": "Book a Demo Call"
   }
 }
