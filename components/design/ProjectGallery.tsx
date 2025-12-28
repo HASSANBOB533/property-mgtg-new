@@ -340,30 +340,7 @@ export default function ProjectGallery() {
           </div>
         </div>
 
-        {/* Coming Soon Projects */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {[1, 2, 3].map((idx) => (
-            <div
-              key={idx}
-              className="bg-gray-100 rounded-xl p-8 text-center border-2 border-dashed border-gray-300 hover:border-blue-primary transition-colors"
-            >
-              <div className="text-6xl mb-4">🏗️</div>
-              <h3 className="text-xl font-bold text-dark-text mb-2">
-                Project {idx + 1}
-              </h3>
-              <p className="text-dark-text/60">{t('comingSoon')}</p>
-            </div>
-          ))}
-        </div>
 
-        {/* Note about adding images */}
-        <div className="mt-12 max-w-3xl mx-auto bg-yellow-primary/10 border border-yellow-primary/30 rounded-lg p-6">
-          <h4 className="font-bold text-dark-text mb-2">📸 For Developers:</h4>
-          <p className="text-sm text-dark-text/80">
-            To add or change project images, update the corresponding room arrays (e.g. <code className="bg-dark-text/10 px-2 py-1 rounded">marinaRooms</code>, <code className="bg-dark-text/10 px-2 py-1 rounded">stella2Rooms</code>, or <code className="bg-dark-text/10 px-2 py-1 rounded">marina7Rooms</code>) 
-            with your own image paths or remote URLs in the format: <code className="bg-dark-text/10 px-2 py-1 rounded">before: 'https://res.cloudinary.com/...'</code>
-          </p>
-        </div>
       </div>
     </section>
   );
