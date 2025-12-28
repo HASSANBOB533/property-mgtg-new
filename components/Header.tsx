@@ -26,23 +26,16 @@ export default function Header() {
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center gap-3" aria-label="Best of Bedz Home">
             <Image 
-              src="/images/logo.png" 
-              alt="Best of Bedz Logo" 
-              width={50} 
-              height={50}
-              className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14"
+              src="/header-icon.png" 
+              alt="Best of Bedz Icon" 
+              width={56} 
+              height={56}
+              className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
               priority
             />
-            <div className="flex items-center gap-2">
-              <div className="text-2xl md:text-3xl lg:text-4xl font-bold" aria-label="BOB">
-                <span className="text-blue-primary">B</span>
-                <span className="text-yellow-primary">O</span>
-                <span className="text-blue-primary">B</span>
-              </div>
-              <span className="text-sm md:text-base lg:text-lg font-semibold text-dark-text">
-                Best of Bedz
-              </span>
-            </div>
+            <span className="text-xl md:text-2xl lg:text-3xl font-bold text-blue-primary">
+              Best of Bedz
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
