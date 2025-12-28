@@ -60,10 +60,10 @@ export default async function LocaleLayout({
         
         {/* Favicon and Icons */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#3B6CB4" />
+        <meta name="theme-color" content="#2F63AD" />
         
         {/* Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

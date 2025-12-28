@@ -30,10 +30,10 @@ export default function Header() {
               alt="Best of Bedz Logo" 
               width={130} 
               height={72}
-              className="h-10 w-auto md:h-12 lg:h-14"
+              className="h-12 w-auto md:h-14 lg:h-16"
               priority
             />
-            <span className="text-xl md:text-2xl lg:text-3xl font-bold text-blue-primary">
+            <span className="text-base md:text-lg lg:text-xl font-bold text-blue-primary">
               Best of Bedz
             </span>
           </Link>
