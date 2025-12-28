@@ -14,7 +14,6 @@ export default function Header() {
   const navItems = [
     {label: t('services'), href: `/${locale}#services`},
     {label: t('design'), href: `/${locale}/design`},
-    {label: t('pricing'), href: `/${locale}#pricing`},
     {label: t('listProperty'), href: `/${locale}/list-property`},
     {label: t('ownerPortal'), href: 'https://bestofbedz.guestyowners.com/login', external: true},
   ];
@@ -66,14 +65,6 @@ export default function Header() {
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
-            <a
-              href="https://cal.com/hassan-ahmed-27rg6z/property-owner-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:block bg-blue-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
-            >
-              {t('getEvaluation')}
-            </a>
 
             {/* Mobile Menu Button */}
             <button
