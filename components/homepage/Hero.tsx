@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image - NO OVERLAY for crystal clear visibility */}
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -18,19 +18,15 @@ export default function Hero() {
             backgroundPosition: 'center center',
           }}
         />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-text/80 via-dark-text/70 to-dark-text/60" />
-        {/* Additional gradient overlay for better text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark-text/40" />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%),_0px_0px_20px_rgb(0_0_0_/_70%)]">
             {t('headline')}
           </h1>
-          <p className="text-xl md:text-2xl text-white/95 mb-8 drop-shadow-lg">
+          <p className="text-xl md:text-2xl text-white mb-8 [text-shadow:_2px_2px_10px_rgb(0_0_0_/_85%),_0px_0px_15px_rgb(0_0_0_/_65%)]">
             {t('subheadline')}
           </p>
           
@@ -51,10 +47,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator (optional, for better UX) */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce hidden md:block">
         <svg 
-          className="w-6 h-6 text-white opacity-75" 
+          className="w-6 h-6 text-white [filter:_drop-shadow(0_2px_8px_rgb(0_0_0_/_80%))]" 
           fill="none" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
