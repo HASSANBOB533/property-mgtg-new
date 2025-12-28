@@ -1,0 +1,7 @@
+{
+  "/[locale]/design/page": "/[locale]/design",
+  "/[locale]/list-property/page": "/[locale]/list-property",
+  "/[locale]/page": "/[locale]",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found"
+}
