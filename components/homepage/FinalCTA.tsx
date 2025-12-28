@@ -8,7 +8,7 @@ export default function FinalCTA() {
   const locale = useLocale();
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-r from-blue-primary to-green-primary text-white">
+    <section className="py-16 md:py-24 bg-[#2F63AD] text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-4">
           {t('title')}
