@@ -10,19 +10,22 @@ export default function PricingPackages() {
   const packages = [
     {
       key: 'marketing',
-      color: 'border-blue-primary',
-      bgColor: 'bg-blue-primary/5',
+      color: 'border-[#2F63AD]',
+      bgColor: 'bg-white',
+      buttonColor: 'bg-[#2F63AD] text-white hover:bg-[#2F63AD]/90',
     },
     {
       key: 'performance',
-      color: 'border-green-primary',
-      bgColor: 'bg-green-primary/5',
+      color: 'border-[#2F63AD]',
+      bgColor: 'bg-[#2F63AD]/5',
       popular: true,
+      buttonColor: 'bg-[#2F63AD] text-white hover:bg-[#2F63AD]/90',
     },
     {
       key: 'allInclusive',
-      color: 'border-yellow-primary',
-      bgColor: 'bg-yellow-primary/5',
+      color: 'border-[#F9DE6A]',
+      bgColor: 'bg-white',
+      buttonColor: 'bg-[#2F63AD] text-white hover:bg-[#2F63AD]/90',
     },
   ];
 
@@ -48,7 +51,7 @@ export default function PricingPackages() {
                 className={`relative border-2 ${pkg.color} ${pkg.bgColor} rounded-2xl p-8 hover:shadow-lg transition-shadow`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#2F63AD] text-white px-6 py-2 rounded-full text-sm font-semibold shadow-md">
                     {t('performance.popular')}
                   </div>
                 )}
@@ -62,20 +65,16 @@ export default function PricingPackages() {
 
                 <ul className="space-y-3 mb-8">
                   {features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm">
-                      <span className="text-green-primary mt-1">✓</span>
-                      <span className="text-[#2F63AD]/80">{feature}</span>
+                    <li key={idx} className="flex items-start gap-3 text-sm">
+                      <span className="text-[#2F63AD] mt-0.5 font-bold text-lg">✓</span>
+                      <span className="text-[#2F63AD]/80 leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <Link
                   href={`/${locale}/list-property`}
-                  className={`block w-full text-center px-6 py-3 rounded-lg font-semibold transition-all ${
-                    pkg.popular
-                      ? 'bg-green-primary text-white hover:bg-green-primary/90'
-                      : 'bg-dark-text text-white hover:bg-dark-text/90'
-                  }`}
+                  className={`block w-full text-center px-6 py-3 rounded-lg font-semibold transition-all ${pkg.buttonColor}`}
                 >
                   Get Started
                 </Link>
