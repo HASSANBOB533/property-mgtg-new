@@ -6,12 +6,12 @@ export default function WhyChooseUs() {
   const t = useTranslations('whyChoose');
 
   const reasons = [
-    {key: 'maximize', icon: '📈', color: 'bg-green-primary'},
-    {key: 'zeroStress', icon: '😌', color: 'bg-blue-primary'},
-    {key: 'technology', icon: '💻', color: 'bg-yellow-primary'},
-    {key: 'superhost', icon: '⭐', color: 'bg-red-accent'},
-    {key: 'datadriven', icon: '📊', color: 'bg-green-primary'},
-    {key: 'sustainable', icon: '🌱', color: 'bg-blue-primary'},
+    {key: 'maximize', icon: '📈', color: 'bg-gradient-to-br from-teal-400 to-teal-500'},
+    {key: 'zeroStress', icon: '😌', color: 'bg-gradient-to-br from-blue-400 to-blue-500'},
+    {key: 'technology', icon: '💻', color: 'bg-gradient-to-br from-amber-400 to-amber-500'},
+    {key: 'superhost', icon: '⭐', color: 'bg-gradient-to-br from-rose-400 to-rose-500'},
+    {key: 'datadriven', icon: '📊', color: 'bg-gradient-to-br from-emerald-400 to-emerald-500'},
+    {key: 'sustainable', icon: '🌱', color: 'bg-gradient-to-br from-cyan-400 to-cyan-500'},
   ];
 
   return (
@@ -25,10 +25,12 @@ export default function WhyChooseUs() {
           {reasons.map((reason) => (
             <div
               key={reason.key}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center"
             >
-              <div className={`w-20 h-20 ${reason.color} rounded-full flex items-center justify-center text-4xl mb-4 shadow-lg`}>
-                {reason.icon}
+              <div className="flex justify-center mb-4">
+                <div className={`w-20 h-20 ${reason.color} rounded-full flex items-center justify-center text-4xl shadow-lg`}>
+                  {reason.icon}
+                </div>
               </div>
               <h3 className="text-xl font-bold text-dark-text mb-2">
                 {t(`${reason.key}.title`)}

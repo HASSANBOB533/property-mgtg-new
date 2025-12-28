@@ -6,13 +6,13 @@ export default function ComprehensiveServices() {
   const t = useTranslations('comprehensiveServices');
 
   const services = [
-    {key: 'design', icon: '🎨', color: 'from-green-primary to-green-primary/70'},
-    {key: 'listing', icon: '📸', color: 'from-blue-primary to-blue-primary/70'},
-    {key: 'revenue', icon: '💰', color: 'from-yellow-primary to-yellow-primary/70'},
-    {key: 'guest', icon: '👥', color: 'from-red-accent to-red-accent/70'},
-    {key: 'property', icon: '🔧', color: 'from-blue-primary to-blue-primary/70'},
-    {key: 'financial', icon: '📊', color: 'from-green-primary to-green-primary/70'},
-    {key: 'legal', icon: '⚖️', color: 'from-dark-text to-dark-text/70'},
+    {key: 'design', icon: '🎨', color: 'from-teal-400 to-teal-500'},
+    {key: 'listing', icon: '📸', color: 'from-blue-400 to-blue-500'},
+    {key: 'revenue', icon: '💰', color: 'from-yellow-400 to-yellow-500'},
+    {key: 'guest', icon: '👥', color: 'from-rose-400 to-rose-500'},
+    {key: 'property', icon: '🔧', color: 'from-sky-400 to-sky-500'},
+    {key: 'financial', icon: '📊', color: 'from-emerald-400 to-emerald-500'},
+    {key: 'legal', icon: '⚖️', color: 'from-slate-500 to-slate-600'},
   ];
 
   return (
@@ -25,10 +25,12 @@ export default function ComprehensiveServices() {
           {services.map((service) => (
             <div
               key={service.key}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center"
             >
-              <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-3xl mb-4 shadow-md`}>
-                {service.icon}
+              <div className="flex justify-center mb-4">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center text-3xl shadow-lg`}>
+                  {service.icon}
+                </div>
               </div>
               <h3 className="text-lg font-bold text-dark-text mb-2">
                 {t(`${service.key}.title`)}
