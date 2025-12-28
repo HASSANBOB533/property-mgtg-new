@@ -1,0 +1,141 @@
+'use client';
+
+import {useState} from 'react';
+import {useTranslations, useLocale} from 'next-intl';
+import Link from 'next/link';
+import Image from 'next/image';
+import LanguageSwitcher from './LanguageSwitcher';
+
+export default function Header() {
+  const t = useTranslations('nav');
+  const locale = useLocale();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    {label: t('services'), href: `/${locale}#services`},
+    {label: t('design'), href: `/${locale}/design`},
+    {label: t('pricing'), href: `/${locale}#pricing`},
+    {label: t('listProperty'), href: `/${locale}/list-property`},
+    {label: t('ownerPortal'), href: 'https://app.guesty.com', external: true},
+  ];
+
+  return (
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <Link href={`/${locale}`} className="flex items-center gap-3" aria-label="Best of Bedz Home">
+            {/* Use the updated PNG logo which matches the official brand colors.  */}
+            <Image 
+              src="/images/logo.png" 
+              alt="Best of Bedz Logo" 
+              width={50} 
+              height={50}
+              className="w-12 h-12 lg:w-14 lg:h-14"
+              priority
+            />
+            <div className="flex flex-col">
+              {/* Render the acronym using brand colours: blue for the "B"s and yellow for the "O". */}
+              <div className="text-3xl lg:text-4xl font-bold text-blue-primary" aria-label="BOB">
+                <span className="text-blue-primary">B</span>
+                <span className="text-yellow-primary">O</span>
+                <span className="text-blue-primary">B</span>
+              </div>
+              <div className="text-xs lg:text-sm font-semibold text-dark-text -mt-1">
+                Best of Bedz
+              </div>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-6">
+            {navItems.map((item) => (
+              item.external ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-dark-text hover:text-blue-primary transition-colors font-medium"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="text-dark-text hover:text-blue-primary transition-colors font-medium"
+                >
+                  {item.label}
+                </Link>
+              )
+            ))}
+          </nav>
+
+          {/* Right Side Actions */}
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+            <Link
+              href={`/${locale}/list-property`}
+              className="hidden md:block bg-blue-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
+            >
+              {t('getEvaluation')}
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden p-2 text-dark-text"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <nav className="lg:hidden py-4 border-t border-gray-200">
+            {navItems.map((item) => (
+              item.external ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block py-3 text-dark-text hover:text-blue-primary transition-colors font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="block py-3 text-dark-text hover:text-blue-primary transition-colors font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              )
+            ))}
+          </nav>
+        )}
+      </div>
+    </header>
+  );
+}
