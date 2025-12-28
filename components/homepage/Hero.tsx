@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center overflow-hidden">
-      {/* Background Image - NO OVERLAY for crystal clear visibility */}
+      {/* Background Image with Very Light Overlay */}
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -18,15 +18,17 @@ export default function Hero() {
             backgroundPosition: 'center center',
           }}
         />
+        {/* Very subtle overlay - barely visible, just for slight text contrast */}
+        <div className="absolute inset-0 bg-black/15" />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%),_0px_0px_20px_rgb(0_0_0_/_70%)]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_8px_rgb(0_0_0_/_70%),_0px_0px_15px_rgb(0_0_0_/_50%)]">
             {t('headline')}
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-8 [text-shadow:_2px_2px_10px_rgb(0_0_0_/_85%),_0px_0px_15px_rgb(0_0_0_/_65%)]">
+          <p className="text-xl md:text-2xl text-white mb-8 [text-shadow:_1px_1px_6px_rgb(0_0_0_/_65%),_0px_0px_12px_rgb(0_0_0_/_45%)]">
             {t('subheadline')}
           </p>
           
