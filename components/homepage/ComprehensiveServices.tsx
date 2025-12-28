@@ -27,7 +27,7 @@ export default function ComprehensiveServices() {
               key={service.key}
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
             >
-              <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center text-3xl mb-4`}>
+              <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-3xl mb-4 shadow-md`}>
                 {service.icon}
               </div>
               <h3 className="text-lg font-bold text-dark-text mb-2">

@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
               key={reason.key}
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
             >
-              <div className={`w-16 h-16 ${reason.color} rounded-full flex items-center justify-center text-3xl mb-4 text-white`}>
+              <div className={`w-20 h-20 ${reason.color} rounded-full flex items-center justify-center text-4xl mb-4 shadow-lg`}>
                 {reason.icon}
               </div>
               <h3 className="text-xl font-bold text-dark-text mb-2">
