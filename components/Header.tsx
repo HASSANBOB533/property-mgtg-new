@@ -24,15 +24,23 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center" aria-label="Best of Bedz Home">
+          <Link href={`/${locale}`} className="flex items-center gap-3" aria-label="Best of Bedz Home">
             <Image 
-              src="/bob-logo.png" 
-              alt="Best of Bedz for Owners" 
-              width={180} 
-              height={180}
-              className="h-12 w-auto md:h-14 lg:h-16"
+              src="/bob-icon.png" 
+              alt="Best of Bedz Icon" 
+              width={60} 
+              height={60}
+              className="h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14"
               priority
             />
+            <div className="flex flex-col">
+              <span className="text-lg md:text-xl lg:text-2xl font-bold text-blue-primary leading-tight">
+                Best of Bedz
+              </span>
+              <span className="text-xs md:text-sm text-gray-600 leading-tight">
+                for Owners
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
