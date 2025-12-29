@@ -14,7 +14,7 @@ export default function DesignHero() {
           src="/images/design-hero.jpg"
           alt="Interior Design"
           fill
-          className="object-contain"
+          className="object-cover object-center"
           priority
           quality={90}
         />
