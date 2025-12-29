@@ -59,34 +59,28 @@ export default function PropertyForm() {
 
 
     try {
-      // Submit to Google Sheets via Google Apps Script
-      // The default URL is provided as a fallback, but should be configured via environment variable
-      // See GOOGLE_SHEETS_SETUP.md for configuration instructions
-      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || 
-                       'https://script.google.com/macros/s/AKfycbxak0I1ZanvfDuKX3r8Jp1sSR1Iel7TnO7bFhA7eEIUOm7EoiJF9lK_9hv4ueHnjWrJ/exec';
-      
-      const response = await fetch(scriptUrl, {
+      // Submit via Next.js API route (server-side)
+      const response = await fetch('/api/submit-property', {
         method: 'POST',
-        mode: 'no-cors', // Important for Google Apps Script CORS
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       });
       
-      // Note: With no-cors mode, we cannot read the response status
-      // We assume success if no network error occurred
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-
-      // Scroll to top to show success message
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      const result = await response.json();
+      
+      if (result.status === 'success') {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
       setIsSubmitting(false);
-      // With no-cors, if we reach here, there was a network error
-      // Show success anyway since we can't verify the actual server response
-      setIsSubmitted(true);
+      alert('There was an error submitting the form. Please try again or contact us directly at Cs@bestofbedz.com');
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
   };
