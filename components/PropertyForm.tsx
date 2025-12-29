@@ -104,7 +104,7 @@ export default function PropertyForm() {
   }
 
   return (
-    <div className="container mx-auto px-4 max-w-4xl py-6">
+    <div className="container mx-auto px-4 max-w-4xl py-6 mb-6">
       <div className="text-center mb-6">
         <h1 className="text-3xl md:text-4xl font-bold text-dark-text mb-2">
           {t('title')}
