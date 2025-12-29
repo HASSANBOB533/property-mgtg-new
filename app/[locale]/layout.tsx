@@ -116,7 +116,7 @@ export default async function LocaleLayout({
             Skip to main content
           </a>
           <Header />
-          <main id="main-content" className="min-h-screen">
+          <main id="main-content">
             {children}
           </main>
           <Footer />
