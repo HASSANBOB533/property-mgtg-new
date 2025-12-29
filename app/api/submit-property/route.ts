@@ -61,7 +61,7 @@ async function sendEmail({ to, subject, html }: { to: string; subject: string; h
   // Instead, we'll use a simple fetch to the Google Apps Script
   // But this time we'll call it from the server side with proper error handling
   
-  const scriptUrl = 'https://script.google.com/macros/s/AKfycbxak0I1ZanvfDuKX3r8Jp1sSR1Iel7TnO7bFhA7eEIUOm7EoiJF9lK_9hv4ueHnjWrJ/exec';
+  const scriptUrl = 'https://script.google.com/macros/s/AKfycbybBb7w8KCKovwu_hq_3Urr7xt0W0Qu0v2-3Qao3JAE9-Re7kLEE413eGCgzPtDuRvK/exec';
   
   try {
     const response = await fetch(scriptUrl, {
@@ -86,7 +86,7 @@ async function sendEmail({ to, subject, html }: { to: string; subject: string; h
 }
 
 async function saveToGoogleSheets(data: any) {
-  const scriptUrl = 'https://script.google.com/macros/s/AKfycbxak0I1ZanvfDuKX3r8Jp1sSR1Iel7TnO7bFhA7eEIUOm7EoiJF9lK_9hv4ueHnjWrJ/exec';
+  const scriptUrl = 'https://script.google.com/macros/s/AKfycbybBb7w8KCKovwu_hq_3Urr7xt0W0Qu0v2-3Qao3JAE9-Re7kLEE413eGCgzPtDuRvK/exec';
   
   try {
     const response = await fetch(scriptUrl, {
