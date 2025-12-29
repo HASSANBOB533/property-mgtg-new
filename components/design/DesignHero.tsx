@@ -19,16 +19,16 @@ export default function DesignHero() {
           quality={90}
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-transparent"></div>
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-2xl">
             {t('title')}
           </h1>
-          <p className="text-lg md:text-xl text-white/95 drop-shadow-md">
+          <p className="text-lg md:text-xl text-white drop-shadow-xl">
             {t('subtitle')}
           </p>
         </div>
