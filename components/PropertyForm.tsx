@@ -563,18 +563,18 @@ export default function PropertyForm() {
       </form>
 
       {/* Schedule Meeting CTA */}
-      <div className="mt-6 bg-gradient-to-r from-green-primary to-blue-primary text-white rounded-2xl p-6 text-center">
-        <h3 className="text-xl font-bold mb-2">
+      <div className="mt-6 bg-gradient-to-r from-green-primary to-blue-primary text-white rounded-xl p-4 text-center">
+        <h3 className="text-lg font-bold mb-1.5">
           {t.has('scheduleMeeting.title') ? t('scheduleMeeting.title') : 'Schedule a Video Call'}
         </h3>
-        <p className="mb-4 opacity-90">
+        <p className="mb-3 opacity-90 text-sm">
           {t.has('scheduleMeeting.subtitle') ? t('scheduleMeeting.subtitle') : 'Meet with our team to discuss your property'}
         </p>
         <a
           href="https://cal.com/hassan-ahmed-27rg6z/property-owner-meeting"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-blue-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all"
+          className="inline-block bg-white text-blue-primary px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-all text-sm"
         >
           {t.has('scheduleMeeting.button') ? t('scheduleMeeting.button') : 'Book Your Meeting'}
         </a>
