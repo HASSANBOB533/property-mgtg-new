@@ -563,11 +563,11 @@ export default function PropertyForm() {
       </form>
 
       {/* Schedule Meeting CTA */}
-      <div className="mt-12 bg-gradient-to-r from-green-primary to-blue-primary text-white rounded-2xl p-8 text-center">
-        <h3 className="text-2xl font-bold mb-2">
+      <div className="mt-6 bg-gradient-to-r from-green-primary to-blue-primary text-white rounded-2xl p-6 text-center">
+        <h3 className="text-xl font-bold mb-2">
           {t.has('scheduleMeeting.title') ? t('scheduleMeeting.title') : 'Schedule a Video Call'}
         </h3>
-        <p className="mb-6 opacity-90">
+        <p className="mb-4 opacity-90">
           {t.has('scheduleMeeting.subtitle') ? t('scheduleMeeting.subtitle') : 'Meet with our team to discuss your property'}
         </p>
         <a
