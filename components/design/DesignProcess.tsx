@@ -15,7 +15,7 @@ export default function DesignProcess() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-10">
           {t('title')}
@@ -24,7 +24,7 @@ export default function DesignProcess() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {steps.map((step, idx) => (
             <div key={step.key} className="relative">
-              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow h-full">
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-[#2F63AD]/30 transition-all duration-300 h-full">
                 <div className="flex items-center gap-4 mb-4">
                   <div className={`w-14 h-14 ${step.bgColor} rounded-full flex items-center justify-center text-2xl flex-shrink-0`}>
                     {step.icon}

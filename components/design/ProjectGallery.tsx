@@ -213,7 +213,7 @@ export default function ProjectGallery() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-3">
           {t('title')}
@@ -302,7 +302,7 @@ export default function ProjectGallery() {
         </div>
 
         {/* Marina 7 Resort Project */}
-        <div className="max-w-6xl mx-auto mb-12">
+        <div className="max-w-6xl mx-auto mb-0">
           <div className="bg-gradient-to-br from-[#2F63AD]/5 to-[#F9DE6A]/10 rounded-2xl p-6 mb-6">
             <h3 className="text-2xl font-bold text-[#2F63AD] mb-3">
               {t('marina7.title')}
@@ -339,8 +339,6 @@ export default function ProjectGallery() {
             </p>
           </div>
         </div>
-
-
       </div>
     </section>
   );
