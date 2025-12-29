@@ -104,18 +104,18 @@ export default function PropertyForm() {
   }
 
   return (
-    <div className="container mx-auto px-4 max-w-4xl">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-dark-text mb-4">
+    <div className="container mx-auto px-4 max-w-4xl py-6">
+      <div className="text-center mb-6">
+        <h1 className="text-3xl md:text-4xl font-bold text-dark-text mb-2">
           {t('title')}
         </h1>
-        <p className="text-xl text-dark-text/70">{t('subtitle')}</p>
+        <p className="text-lg text-dark-text/70">{t('subtitle')}</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-8">
+      <form onSubmit={handleSubmit} className="space-y-6">
         {/* Owner Information */}
-        <section className="bg-white rounded-xl p-6 shadow-md">
-          <h2 className="text-2xl font-bold text-dark-text mb-6">
+        <section className="bg-white rounded-xl p-5 shadow-md">
+          <h2 className="text-xl font-bold text-dark-text mb-4">
             {t('ownerInfo.title')}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -171,8 +171,8 @@ export default function PropertyForm() {
         </section>
 
         {/* Property Details */}
-        <section className="bg-white rounded-xl p-6 shadow-md">
-          <h2 className="text-2xl font-bold text-dark-text mb-6">
+        <section className="bg-white rounded-xl p-5 shadow-md">
+          <h2 className="text-xl font-bold text-dark-text mb-4">
             {t('propertyDetails.title')}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -262,8 +262,8 @@ export default function PropertyForm() {
         </section>
 
         {/* Property Specifications */}
-        <section className="bg-white rounded-xl p-6 shadow-md">
-          <h2 className="text-2xl font-bold text-dark-text mb-6">
+        <section className="bg-white rounded-xl p-5 shadow-md">
+          <h2 className="text-xl font-bold text-dark-text mb-4">
             {t('specifications.title')}
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -347,8 +347,8 @@ export default function PropertyForm() {
         </section>
 
         {/* Amenities */}
-        <section className="bg-white rounded-xl p-6 shadow-md">
-          <h2 className="text-2xl font-bold text-dark-text mb-6">
+        <section className="bg-white rounded-xl p-5 shadow-md">
+          <h2 className="text-xl font-bold text-dark-text mb-4">
             {t('amenities.title')}
           </h2>
           <div className="grid md:grid-cols-4 gap-4">
@@ -370,8 +370,8 @@ export default function PropertyForm() {
         </section>
 
         {/* Service Selection */}
-        <section className="bg-white rounded-xl p-6 shadow-md">
-          <h2 className="text-2xl font-bold text-dark-text mb-6">
+        <section className="bg-white rounded-xl p-5 shadow-md">
+          <h2 className="text-xl font-bold text-dark-text mb-4">
             {t('services.title')}
           </h2>
           <p className="text-dark-text/70 mb-4">{t('services.question')}</p>
@@ -394,8 +394,8 @@ export default function PropertyForm() {
         </section>
 
         {/* Property Description */}
-        <section className="bg-white rounded-xl p-6 shadow-md">
-          <h2 className="text-2xl font-bold text-dark-text mb-6">
+        <section className="bg-white rounded-xl p-5 shadow-md">
+          <h2 className="text-xl font-bold text-dark-text mb-4">
             {t('description.title')}
           </h2>
           <div className="space-y-6">
@@ -423,8 +423,8 @@ export default function PropertyForm() {
         </section>
 
         {/* Current Status */}
-        <section className="bg-white rounded-xl p-6 shadow-md">
-          <h2 className="text-2xl font-bold text-dark-text mb-6">
+        <section className="bg-white rounded-xl p-5 shadow-md">
+          <h2 className="text-xl font-bold text-dark-text mb-4">
             {t('currentStatus.title')}
           </h2>
           <div className="space-y-6">
