@@ -63,7 +63,7 @@ export default function PropertyForm() {
       // The default URL is provided as a fallback, but should be configured via environment variable
       // See GOOGLE_SHEETS_SETUP.md for configuration instructions
       const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || 
-                       'https://script.google.com/macros/s/AKfycbyuZcSxYtCydIsyHAeB8D-jyMG1VCmtEjmAcWp8TLJFUvzWVmex9MqeFSZ16WjiVk8Ogw/exec';
+                       'https://script.google.com/macros/s/AKfycbwE8Qzoc8zUNlpJTpV-o6iESSbbLlyr9KjkP50OUNQECSz-78NoDljPW-uZ8Vy2PLjmYg/exec';
       
       const response = await fetch(scriptUrl, {
         method: 'POST',
