@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     console.log('Received form submission:', data);
     
     // Submit to Google Apps Script (handles both emails and sheet saving)
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbxQ8QyNEq81umdawL9eBpOhoe4mavQFuA44mU-9Sg81aMDso2CU3TLfGRVPf-Q_7cTY/exec';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbwEWT7P1LsULEX-xaM1GpXuzLTHIx_vM4KNCgeo4F9e1JqkIccIQtDSPFPtA1UYXVwV/exec';
     
     const response = await fetch(scriptUrl, {
       method: 'POST',
