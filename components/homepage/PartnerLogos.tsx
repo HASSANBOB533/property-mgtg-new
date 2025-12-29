@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 export default function PartnerLogos() {
   const partners = [
-    { name: 'Airbnb', logo: '/partner-airbnb.png', width: 120, height: 40 },
+    { name: 'Airbnb', logo: '/partner-airbnb.png', width: 140, height: 40 },
     { name: 'Booking.com', logo: '/partner-booking.png', width: 140, height: 40 },
-    { name: 'Vrbo', logo: '/partner-vrbo.png', width: 100, height: 40 },
-    { name: 'Expedia', logo: '/partner-expedia.png', width: 120, height: 40 },
-    { name: 'Agoda', logo: '/partner-agoda.jpg', width: 100, height: 40 },
-    { name: 'Trip.com', logo: '/partner-trip.png', width: 120, height: 40 }
+    { name: 'Vrbo', logo: '/partner-vrbo.png', width: 140, height: 40 },
+    { name: 'Expedia', logo: '/partner-expedia.png', width: 180, height: 50 },
+    { name: 'Agoda', logo: '/partner-agoda.jpg', width: 140, height: 40 },
+    { name: 'Trip.com', logo: '/partner-trip.png', width: 140, height: 40 }
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function PartnerLogos() {
                 width={partner.width}
                 height={partner.height}
                 className="object-contain"
-                style={{ width: 'auto', height: '40px' }}
+                style={{ width: 'auto', maxHeight: '45px' }}
               />
             </div>
           ))}
