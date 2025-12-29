@@ -19,7 +19,7 @@ export default function DesignHero() {
           quality={90}
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2F63AD]/90 via-[#2F63AD]/70 to-[#2F63AD]/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
       </div>
 
       {/* Content */}
