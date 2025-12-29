@@ -106,7 +106,7 @@ export default async function LocaleLayout({
           }}
         />
       </head>
-      <body className="font-sans">
+      <body className="font-sans flex flex-col min-h-screen">
         <NextIntlClientProvider messages={messages}>
           {/* Skip to main content for keyboard navigation */}
           <a 
@@ -116,7 +116,7 @@ export default async function LocaleLayout({
             Skip to main content
           </a>
           <Header />
-          <main id="main-content">
+          <main id="main-content" className="flex-1">
             {children}
           </main>
           <Footer />
