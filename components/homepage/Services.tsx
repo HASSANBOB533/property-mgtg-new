@@ -8,9 +8,9 @@ export default function Services() {
   const locale = useLocale();
 
   return (
-    <section id="services" className="py-16 md:py-20 bg-white">
+    <section id="services" className="py-10 md:py-12 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-6">
           {t('title')}
         </h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">

@@ -23,9 +23,9 @@ export default function PricingPackages() {
   ];
 
   return (
-    <section id="pricing" className="py-20 bg-gray-50">
+    <section id="pricing" className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="text-4xl font-bold text-[#2F63AD] mb-4">
             {t('title')}
           </h2>
@@ -62,7 +62,7 @@ export default function PricingPackages() {
                     </span>
                   </div>
 
-                  <ul className="space-y-4 mb-8 min-h-[240px]">
+                  <ul className="space-y-4 mb-6 min-h-[240px]">
                     {features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <svg

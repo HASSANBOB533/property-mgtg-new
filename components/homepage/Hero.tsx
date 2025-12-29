@@ -28,11 +28,11 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_8px_rgb(0_0_0_/_70%),_0px_0px_15px_rgb(0_0_0_/_50%)]">
             {t('headline')}
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-8 [text-shadow:_1px_1px_6px_rgb(0_0_0_/_65%),_0px_0px_12px_rgb(0_0_0_/_45%)]">
+          <p className="text-xl md:text-2xl text-white mb-6 [text-shadow:_1px_1px_6px_rgb(0_0_0_/_65%),_0px_0px_12px_rgb(0_0_0_/_45%)]">
             {t('subheadline')}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link
               href={`/${locale}/list-property`}
               className="bg-blue-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-opacity-90 transition-all shadow-2xl hover:shadow-blue-primary/50 hover:scale-105 transform"
