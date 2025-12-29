@@ -1,7 +1,8 @@
 {
   "nav": {
-    "services": "Services",
+    "services": "Property Management",
     "design": "Design & Furnishing",
+    "homeCare": "Home Care",
     "pricing": "Pricing",
     "listProperty": "List Property",
     "ownerPortal": "Owner Portal",

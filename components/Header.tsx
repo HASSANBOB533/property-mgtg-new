@@ -14,6 +14,7 @@ export default function Header() {
   const navItems = [
     {label: t('services'), href: `/${locale}#services`},
     {label: t('design'), href: `/${locale}/design`},
+    {label: t('homeCare'), href: 'https://bobhomecare.com', external: true},
     {label: t('listProperty'), href: `/${locale}/list-property`},
     {label: t('ownerPortal'), href: 'https://bestofbedz.guestyowners.com/login', external: true},
   ];
