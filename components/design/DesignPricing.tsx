@@ -6,9 +6,9 @@ export default function DesignPricing() {
   const t = useTranslations('design.pricing');
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-br from-blue-50 to-gray-50">
+    <section className="py-8 md:py-10 bg-gradient-to-br from-blue-50 to-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-8">
           {t('title')}
         </h2>
 

@@ -213,12 +213,12 @@ export default function ProjectGallery() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-8 md:py-10 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-3">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-2">
           {t('title')}
         </h2>
-        <p className="text-center text-[#2F63AD]/70 mb-10 max-w-2xl mx-auto">
+        <p className="text-center text-[#2F63AD]/70 mb-8 max-w-2xl mx-auto">
           Drag the slider to see the transformation of our design projects
         </p>
 
