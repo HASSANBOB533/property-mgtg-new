@@ -39,12 +39,14 @@ export default function Hero() {
             >
               {t('ctaPrimary')}
             </Link>
-            <Link
-              href={`/${locale}#services`}
+            <a
+              href="https://cal.com/hassan-ahmed-27rg6z/property-owner-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-blue-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-all border-2 border-white shadow-2xl hover:scale-105 transform"
             >
               {t('ctaSecondary')}
-            </Link>
+            </a>
           </div>
         </div>
       </div>
