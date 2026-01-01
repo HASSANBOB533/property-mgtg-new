@@ -1,6 +1,7 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
+import OwnerDashboardCarousel from './OwnerDashboardCarousel';
 
 export default function OwnerPortalSection() {
   const t = useTranslations('ownerPortal');
@@ -16,27 +17,9 @@ export default function OwnerPortalSection() {
           </h2>
           <p className="text-xl mb-6 opacity-90">{t('subtitle')}</p>
 
-          {/* Mockup Dashboard Preview */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-6">
-            <div className="bg-white/5 rounded-lg p-6 border-2 border-white/20">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-white/10 rounded-lg p-4 text-center">
-                  <div className="text-3xl font-bold">$12,450</div>
-                  <div className="text-sm opacity-80">This Month</div>
-                </div>
-                <div className="bg-white/10 rounded-lg p-4 text-center">
-                  <div className="text-3xl font-bold">85%</div>
-                  <div className="text-sm opacity-80">Occupancy</div>
-                </div>
-                <div className="bg-white/10 rounded-lg p-4 text-center col-span-2 md:col-span-1">
-                  <div className="text-3xl font-bold">4.9★</div>
-                  <div className="text-sm opacity-80">Guest Rating</div>
-                </div>
-              </div>
-              <div className="text-center text-sm opacity-70">
-                Guesty Owner Portal Dashboard Preview
-              </div>
-            </div>
+          {/* Owner Dashboard Carousel */}
+          <div className="mb-6">
+            <OwnerDashboardCarousel />
           </div>
 
           {/* Features Grid */}

@@ -111,7 +111,29 @@
       "Guest reviews and feedback",
       "Manual reservation creation"
     ],
-    "cta": "Access Owner Portal"
+    "cta": "Access Owner Portal",
+    "carousel": {
+      "dashboard": {
+        "title": "Performance Dashboard",
+        "description": "Track revenue, occupancy, and guest ratings in real-time"
+      },
+      "calendar": {
+        "title": "Live Booking Calendar",
+        "description": "View reservations, pricing, and availability across all channels"
+      },
+      "reservation": {
+        "title": "Block Your Own Dates",
+        "description": "Reserve your property for personal stays anytime"
+      },
+      "reports": {
+        "title": "Reservation Reports",
+        "description": "Access detailed reports of all current and past bookings"
+      },
+      "help": {
+        "title": "24/7 Help Center",
+        "description": "Get instant support and guides for using the portal"
+      }
+    }
   },
   "whyChoose": {
     "title": "Why Choose Best of Bedz",
