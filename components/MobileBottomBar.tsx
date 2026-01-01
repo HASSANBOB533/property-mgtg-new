@@ -19,7 +19,7 @@ export default function MobileBottomBar() {
           {t('getEvaluation')}
         </a>
         <a
-          href="tel:+201234567890"
+          href="tel:+201227580022"
           className="bg-green-primary text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-opacity-90 transition-all text-sm"
         >
           📞 Call Us
