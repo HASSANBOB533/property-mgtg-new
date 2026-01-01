@@ -58,11 +58,11 @@ export default function OwnerDashboardCarousel() {
   const currentFeature = dashboardFeatures[currentIndex];
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="relative w-full max-w-md mx-auto">
       {/* Carousel Container */}
       <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
         {/* Image Container */}
-        <div className="relative aspect-[9/16] md:aspect-[9/19] bg-gray-100">
+        <div className="relative aspect-[9/16] max-h-[500px] bg-gray-100">
           <Image
             src={currentFeature.image}
             alt={t(currentFeature.titleKey)}
