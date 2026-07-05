@@ -83,11 +83,12 @@ export default function OwnerPortalSection() {
               ))}
             </div>
 
+            {/* Desktop CTA — on mobile it moves below the phone */}
             <a
               href="https://bestofbedz.guestyowners.com/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-block rounded-full bg-white px-8 py-3.5 font-bold text-[#2861AD] shadow-lg transition-colors hover:bg-[#EEF0DC]"
+              className="mt-7 hidden rounded-full bg-white px-8 py-3.5 font-bold text-[#2861AD] shadow-lg transition-colors hover:bg-[#EEF0DC] lg:inline-block"
             >
               {t('cta')}
             </a>
@@ -110,6 +111,16 @@ export default function OwnerPortalSection() {
               />
             </div>
           </div>
+
+          {/* Mobile CTA — after the phone */}
+          <a
+            href="https://bestofbedz.guestyowners.com/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mx-auto inline-block rounded-full bg-white px-8 py-3.5 text-center font-bold text-[#2861AD] shadow-lg transition-colors hover:bg-[#EEF0DC] lg:hidden"
+          >
+            {t('cta')}
+          </a>
         </div>
       </div>
     </section>

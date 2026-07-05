@@ -1,8 +1,10 @@
 'use client';
 
+import {useRef, useState} from 'react';
 import {useTranslations, useLocale} from 'next-intl';
 import Link from 'next/link';
 import BrandIcon from '../BrandIcon';
+import CarouselDots from '../CarouselDots';
 
 /**
  * Best of Bedz Owners — the five locked owner services.
@@ -20,6 +22,23 @@ const OWNER_SERVICES = [
 export default function Services() {
   const t = useTranslations('services');
   const locale = useLocale();
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeCard, setActiveCard] = useState(0);
+
+  const onTrackScroll = () => {
+    const el = trackRef.current;
+    if (!el?.children.length) return;
+    const step = (el.children[0] as HTMLElement).offsetWidth + 16;
+    setActiveCard(Math.min(OWNER_SERVICES.length - 1, Math.round(Math.abs(el.scrollLeft) / step)));
+  };
+
+  const scrollToCard = (i: number) => {
+    (trackRef.current?.children[i] as HTMLElement | undefined)?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    });
+  };
 
   return (
     <section id="services" className="scroll-mt-24 bg-white py-10 md:py-20">
@@ -35,7 +54,11 @@ export default function Services() {
         </p>
 
         {/* Mobile: swipeable snap carousel · Desktop: 5-up grid */}
-        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 lg:mx-auto lg:grid lg:max-w-6xl lg:snap-none lg:grid-cols-5 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0">
+        <div
+          ref={trackRef}
+          onScroll={onTrackScroll}
+          className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 lg:mx-auto lg:grid lg:max-w-6xl lg:snap-none lg:grid-cols-5 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0"
+        >
           {OWNER_SERVICES.map((s, idx) => {
             const href = s.href.startsWith('#')
               ? `/${locale}${s.href}`
@@ -80,6 +103,13 @@ export default function Services() {
             );
           })}
         </div>
+
+        <CarouselDots
+          count={OWNER_SERVICES.length}
+          active={activeCard}
+          onSelect={scrollToCard}
+          className="text-[#2861AD] lg:hidden"
+        />
       </div>
     </section>
   );

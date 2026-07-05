@@ -1,7 +1,9 @@
 'use client';
 
+import {useRef, useState} from 'react';
 import {useTranslations, useLocale} from 'next-intl';
 import Link from 'next/link';
+import CarouselDots from '../CarouselDots';
 
 const PACKAGES = [
   {key: 'marketing', featured: false},
@@ -12,6 +14,23 @@ const PACKAGES = [
 export default function PricingPackages() {
   const t = useTranslations('pricing');
   const locale = useLocale();
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeCard, setActiveCard] = useState(0);
+
+  const onTrackScroll = () => {
+    const el = trackRef.current;
+    if (!el?.children.length) return;
+    const step = (el.children[0] as HTMLElement).offsetWidth + 16;
+    setActiveCard(Math.min(PACKAGES.length - 1, Math.round(Math.abs(el.scrollLeft) / step)));
+  };
+
+  const scrollToCard = (i: number) => {
+    (trackRef.current?.children[i] as HTMLElement | undefined)?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    });
+  };
 
   return (
     <section id="pricing" className="scroll-mt-24 bg-white py-10 md:py-20">
@@ -27,7 +46,11 @@ export default function PricingPackages() {
         </div>
 
         {/* Mobile: swipeable snap carousel · Desktop: one rate-card panel, three columns */}
-        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-auto md:grid md:max-w-6xl md:snap-none md:grid-cols-3 md:gap-0 md:overflow-visible md:rounded-3xl md:px-0 md:pb-0 md:shadow-lg md:ring-1 md:ring-[#EBECE2]">
+        <div
+          ref={trackRef}
+          onScroll={onTrackScroll}
+          className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-auto md:grid md:max-w-6xl md:snap-none md:grid-cols-3 md:gap-0 md:overflow-visible md:rounded-3xl md:px-0 md:pb-0 md:shadow-lg md:ring-1 md:ring-[#EBECE2]"
+        >
           {PACKAGES.map((pkg) => {
             const features = Array.from({length: 5}, (_, i) =>
               t(`${pkg.key}.features.${i}`)
@@ -37,7 +60,7 @@ export default function PricingPackages() {
             return (
               <div
                 key={pkg.key}
-                className={`relative flex min-w-[82%] shrink-0 snap-center flex-col rounded-2xl p-7 sm:min-w-[55%] md:min-w-0 md:shrink md:rounded-none md:p-9 ${
+                className={`relative flex min-w-[78%] shrink-0 snap-center flex-col rounded-2xl p-7 sm:min-w-[55%] md:min-w-0 md:shrink md:rounded-none md:p-9 ${
                   dark
                     ? 'bg-gradient-to-b from-[#2861AD] to-[#1D4A85] text-white shadow-lg ring-1 ring-[#2861AD] md:rounded-2xl md:shadow-2xl md:ring-0 md:[transform:scale(1.03)]'
                     : 'bg-white ring-1 ring-[#EBECE2] md:ring-0'
@@ -108,6 +131,13 @@ export default function PricingPackages() {
             );
           })}
         </div>
+
+        <CarouselDots
+          count={PACKAGES.length}
+          active={activeCard}
+          onSelect={scrollToCard}
+          className="text-[#2861AD]"
+        />
       </div>
     </section>
   );

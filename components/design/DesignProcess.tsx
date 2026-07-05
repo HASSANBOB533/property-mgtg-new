@@ -1,7 +1,9 @@
 'use client';
 
+import {useRef, useState} from 'react';
 import {useTranslations} from 'next-intl';
 import BrandIcon from '../BrandIcon';
+import CarouselDots from '../CarouselDots';
 
 const STEPS = [
   {key: 'step1', icon: 'mapPin'},
@@ -14,6 +16,23 @@ const STEPS = [
 
 export default function DesignProcess() {
   const t = useTranslations('design.process');
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeCard, setActiveCard] = useState(0);
+
+  const onTrackScroll = () => {
+    const el = trackRef.current;
+    if (!el?.children.length) return;
+    const step = (el.children[0] as HTMLElement).offsetWidth + 16;
+    setActiveCard(Math.min(STEPS.length - 1, Math.round(Math.abs(el.scrollLeft) / step)));
+  };
+
+  const scrollToCard = (i: number) => {
+    (trackRef.current?.children[i] as HTMLElement | undefined)?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    });
+  };
 
   return (
     <section className="bg-[#EEF0DC]/50 py-10 md:py-20">
@@ -26,7 +45,11 @@ export default function DesignProcess() {
         </h2>
 
         {/* Mobile: swipeable snap carousel · Desktop: 3-up grid */}
-        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-auto md:grid md:max-w-6xl md:snap-none md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
+        <div
+          ref={trackRef}
+          onScroll={onTrackScroll}
+          className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-auto md:grid md:max-w-6xl md:snap-none md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3"
+        >
           {STEPS.map((step, idx) => (
             <div
               key={step.key}
@@ -49,6 +72,13 @@ export default function DesignProcess() {
             </div>
           ))}
         </div>
+
+        <CarouselDots
+          count={STEPS.length}
+          active={activeCard}
+          onSelect={scrollToCard}
+          className="text-[#2861AD]"
+        />
       </div>
     </section>
   );
