@@ -2,7 +2,7 @@
   "nav": {
     "listProperty": "List Your Property",
     "ownerPortal": "Owner Portal",
-    "getEvaluation": "Book Demo Call"
+    "getEvaluation": "Book a Call"
   },
   "hero": {
     "headlineArt": "The art of property management.",
@@ -233,7 +233,7 @@
   "finalCTA": {
     "title": "Ready to Maximize Your Rental Income?",
     "subtitle": "Get a free property evaluation and discover your revenue potential",
-    "button": "Book Demo Call"
+    "button": "Book a Call"
   },
   "footer": {
     "company": {
@@ -417,10 +417,15 @@
       "teamNote": "Our team will contact you to collect property photos via email or WhatsApp after your initial submission."
     },
     "submit": "Submit Your Property for Evaluation",
+    "submitting": "Submitting…",
+    "submitError": "There was an error submitting the form. Please try again or contact us directly at cs@bestofbedz.com",
+    "thankYou": "Thank you!",
+    "submitAnother": "Submit another property",
     "confirmation": "We'll review your submission and contact you within 24-48 hours"
   },
   "mobileBar": {
-    "callUs": "Call Us"
+    "callUs": "Call Us",
+    "whatsapp": "WhatsApp"
   },
   "scheduleMeeting": {
     "title": "Book a Demo Call",

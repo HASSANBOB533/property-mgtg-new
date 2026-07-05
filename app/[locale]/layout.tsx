@@ -114,7 +114,7 @@ export default async function LocaleLayout({
           }}
         />
       </head>
-      <body className="font-sans flex flex-col min-h-screen">
+      <body className="font-sans flex flex-col min-h-screen pb-[72px] lg:pb-0">
         <NextIntlClientProvider messages={messages}>
           {/* Skip to main content for keyboard navigation */}
           <a 

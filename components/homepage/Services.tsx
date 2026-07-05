@@ -85,7 +85,7 @@ export default function Services() {
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600 transition-colors duration-300 group-hover:text-white/85">
                   {t(`${s.key}.description`)}
                 </p>
-                <span className="mt-4 text-sm font-semibold text-[#2861AD] opacity-0 transition-all duration-200 group-hover:text-[#F7DD6E] group-hover:opacity-100">
+                <span className="mt-4 text-sm font-semibold text-[#2861AD] transition-all duration-200 group-hover:text-[#F7DD6E] lg:opacity-0 lg:group-hover:opacity-100">
                   {t('learnMore')} →
                 </span>
               </div>

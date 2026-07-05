@@ -21,8 +21,9 @@ export default function DesignHero() {
   const locale = useLocale();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Auto-advance carousel every 5 seconds
+  // Auto-advance carousel every 5 seconds (not for reduced-motion users)
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
     }, 5000);

@@ -3,9 +3,15 @@
 import {useState} from 'react';
 import {useTranslations, useLocale} from 'next-intl';
 import { CldUploadWidget } from 'next-cloudinary';
+import BrandIcon from './BrandIcon';
+
+/** Photo upload needs a configured Cloudinary cloud; without it the widget
+ *  throws and takes the whole page down, so it renders only when set. */
+const CLOUDINARY_CLOUD = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 
 export default function PropertyForm() {
   const t = useTranslations('listProperty');
+  const tm = useTranslations('scheduleMeeting');
   const locale = useLocale();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -80,7 +86,7 @@ export default function PropertyForm() {
     } catch (error) {
       console.error('Form submission error:', error);
       setIsSubmitting(false);
-      alert('There was an error submitting the form. Please try again or contact us directly at Cs@bestofbedz.com');
+      alert(t('submitError'));
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
   };
@@ -89,14 +95,16 @@ export default function PropertyForm() {
     return (
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="bg-green-primary/10 border-2 border-green-primary rounded-2xl p-8 text-center">
-          <div className="text-6xl mb-4">✅</div>
-          <h2 className="text-3xl font-bold text-dark-text mb-4">Thank You!</h2>
+          <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-green-primary text-white">
+            <BrandIcon name="shield" className="h-8 w-8" />
+          </div>
+          <h2 className="text-3xl font-bold text-dark-text mb-4">{t('thankYou')}</h2>
           <p className="text-lg text-dark-text/80 mb-6">{t('confirmation')}</p>
           <button
             onClick={() => setIsSubmitted(false)}
             className="text-blue-primary font-semibold hover:underline"
           >
-            Submit Another Property
+            {t('submitAnother')}
           </button>
         </div>
       </div>
@@ -149,9 +157,10 @@ export default function PropertyForm() {
                 type="tel"
                 name="phone"
                 required
-                                pattern="[0-9]{8,15}"
-                                placeholder="e.g., 01234567890"
-                                title="Please enter a valid phone number (8-15 digits only)"
+                dir="ltr"
+                pattern="\+?[0-9\s-]{8,16}"
+                placeholder="+20 1X XXXX XXXX"
+                title="8-15 digits, + allowed"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-primary"
               />
             </div>
@@ -485,6 +494,12 @@ export default function PropertyForm() {
   </h2>
   
   <div className="space-y-4">
+   {!CLOUDINARY_CLOUD ? (
+    <div className="rounded-lg border-2 border-dashed border-blue-primary/40 bg-blue-primary/5 p-6 text-center">
+      <BrandIcon name="camera" className="mx-auto mb-3 h-8 w-8 text-blue-primary" />
+      <p className="text-sm leading-relaxed text-dark-text/80">{t('photos.teamNote')}</p>
+    </div>
+   ) : (
    <CldUploadWidget
   uploadPreset="property-photos"
   options={{
@@ -509,16 +524,17 @@ export default function PropertyForm() {
           onClick={() => open()}
           className="w-full bg-blue-primary/10 border-2 border-blue-primary rounded-lg p-8 text-center hover:bg-blue-primary/20 transition-all"
         >
-          <div className="text-5xl mb-4">📸</div>
+          <BrandIcon name="camera" className="mx-auto mb-4 h-10 w-10 text-blue-primary" />
           <p className="text-dark-text font-semibold mb-2">
-            Click to Upload Property Photos
+            {t('photos.title')}
           </p>
           <p className="text-dark-text/70 text-sm">
-            Upload up to 20 images (JPG, PNG, WEBP - Max 10MB each)
+            {t('photos.instructions')}
           </p>
         </button>
       )}
     </CldUploadWidget>
+   )}
 
     {uploadedImages.length > 0 && (
       <div className="mt-6">
@@ -536,7 +552,8 @@ export default function PropertyForm() {
               <button
                 type="button"
                 onClick={() => setUploadedImages(prev => prev.filter((_, i) => i !== index))}
-                className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                aria-label="Remove photo"
+                className="absolute top-2 right-2 bg-[#DE2A37] text-white rounded-full w-7 h-7 flex items-center justify-center transition-opacity md:opacity-0 md:group-hover:opacity-100"
               >
                 ×
               </button>
@@ -556,7 +573,7 @@ export default function PropertyForm() {
             disabled={isSubmitting}
             className="bg-blue-primary text-white px-12 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed min-h-[56px]"
           >
-            {isSubmitting ? 'Submitting...' : t('submit')}
+            {isSubmitting ? t('submitting') : t('submit')}
           </button>
           <p className="text-sm text-dark-text/60 mt-4">{t('confirmation')}</p>
         </div>
@@ -564,19 +581,15 @@ export default function PropertyForm() {
 
       {/* Schedule Meeting CTA */}
       <div className="mt-6 bg-blue-primary text-white rounded-xl p-6 text-center border-4 border-yellow-primary shadow-lg">
-        <h3 className="text-2xl font-bold mb-2">
-          {t.has('scheduleMeeting.title') ? t('scheduleMeeting.title') : 'Schedule a Video Call'}
-        </h3>
-        <p className="mb-4 text-white/90 text-base">
-          {t.has('scheduleMeeting.subtitle') ? t('scheduleMeeting.subtitle') : 'Meet with our team to discuss your property'}
-        </p>
+        <h3 className="text-2xl font-bold mb-2">{tm('title')}</h3>
+        <p className="mb-4 text-white/90 text-base">{tm('subtitle')}</p>
         <a
           href="https://cal.com/hassan-ahmed-27rg6z/property-owner-meeting"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-yellow-primary text-blue-primary px-8 py-3 rounded-lg font-bold hover:bg-yellow-primary/90 transition-all shadow-md hover:shadow-xl"
         >
-          {t.has('scheduleMeeting.button') ? t('scheduleMeeting.button') : 'Book Your Meeting'}
+          {tm('button')}
         </a>
       </div>
     </div>

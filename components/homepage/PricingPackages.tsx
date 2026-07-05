@@ -85,7 +85,8 @@ export default function PricingPackages() {
                 {/* Rate */}
                 <div className="mb-6 mt-3">
                   <span
-                    className={`block text-5xl font-bold leading-none tabular-nums ${
+                    dir="ltr"
+                    className={`block w-fit text-5xl font-bold leading-none tabular-nums ${
                       dark ? 'text-white' : 'text-[#1F2D26]'
                     }`}
                   >
