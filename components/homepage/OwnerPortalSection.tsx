@@ -22,7 +22,7 @@ export default function OwnerPortalSection() {
       <div className="container mx-auto px-4">
         <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           {/* Copy + feature selector */}
-          <div>
+          <div className="min-w-0">
             <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#F7DD6E]">
               {tn('ownerPortal')}
             </p>
