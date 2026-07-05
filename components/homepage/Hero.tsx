@@ -2,40 +2,63 @@
 
 import {useTranslations, useLocale} from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   const t = useTranslations('hero');
   const locale = useLocale();
+  const isRTL = locale === 'ar';
 
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center overflow-hidden">
-      {/* Background Image with Very Light Overlay */}
+    <section className="relative flex min-h-[600px] items-center overflow-hidden md:min-h-[680px]">
+      {/* Background photo */}
       <div className="absolute inset-0 z-0">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/hero-background.jpg)',
-            backgroundPosition: 'center center',
-          }}
+          style={{backgroundImage: 'url(/hero-background.jpg)'}}
         />
-        {/* Very subtle overlay - barely visible, just for slight text contrast */}
-        <div className="absolute inset-0 bg-black/15" />
+        {/* Cinematic brand gradient — ink from the text side, photo breathes on the other */}
+        <div
+          className={`absolute inset-0 ${
+            isRTL
+              ? 'bg-gradient-to-l from-[#122F5A]/95 via-[#1D4A85]/60 to-[#2861AD]/10'
+              : 'bg-gradient-to-r from-[#122F5A]/95 via-[#1D4A85]/60 to-[#2861AD]/10'
+          }`}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#122F5A]/60 via-transparent to-[#122F5A]/30" />
       </div>
 
+      {/* Brand swirl watermark */}
+      <Image
+        src="/logo/bob-swirl-white.svg"
+        alt=""
+        aria-hidden
+        width={420}
+        height={420}
+        className={`pointer-events-none absolute -top-16 z-[1] w-[280px] opacity-[0.08] md:w-[400px] ${
+          isRTL ? '-left-20' : '-right-20'
+        }`}
+      />
+
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_8px_rgb(0_0_0_/_70%),_0px_0px_15px_rgb(0_0_0_/_50%)]">
-            {t('headline')}
-          </h1>
-          <p className="text-xl md:text-2xl text-white mb-6 [text-shadow:_1px_1px_6px_rgb(0_0_0_/_65%),_0px_0px_12px_rgb(0_0_0_/_45%)]">
-            {t('subheadline')}
+      <div className="container relative z-10 mx-auto px-4 py-20">
+        <div className={`max-w-3xl ${isRTL ? 'text-right' : 'text-left'}`}>
+          <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#F7DD6E]">
+            Best of Bedz · Owners
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+          <h1 className="mb-5 text-4xl font-bold leading-[1.12] text-white sm:text-5xl md:text-6xl">
+            {t('headlineArt')}
+            <br />
+            <span className="text-[#F7DD6E]">{t('headlineScience')}</span>
+          </h1>
+          <p className="mb-8 max-w-xl text-lg leading-relaxed text-white/85 md:text-xl">
+            {t('support')}
+          </p>
+
+          <div className="flex flex-col gap-4 sm:flex-row">
             <Link
               href={`/${locale}/list-property`}
-              className="bg-blue-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-opacity-90 transition-all shadow-2xl hover:shadow-blue-primary/50 hover:scale-105 transform"
+              className="rounded-full bg-[#F7DD6E] px-8 py-4 text-center text-lg font-bold text-[#122F5A] shadow-xl transition-colors hover:bg-[#EBCB4E]"
             >
               {t('ctaPrimary')}
             </Link>
@@ -43,27 +66,12 @@ export default function Hero() {
               href="https://cal.com/hassan-ahmed-27rg6z/property-owner-meeting"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-blue-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-all border-2 border-white shadow-2xl hover:scale-105 transform"
+              className="rounded-full border-2 border-white/60 bg-white/10 px-8 py-4 text-center text-lg font-semibold text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/20"
             >
               {t('ctaSecondary')}
             </a>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce hidden md:block">
-        <svg 
-          className="w-6 h-6 text-white [filter:_drop-shadow(0_2px_8px_rgb(0_0_0_/_80%))]" 
-          fill="none" 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-          strokeWidth="2" 
-          viewBox="0 0 24 24" 
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
       </div>
     </section>
   );

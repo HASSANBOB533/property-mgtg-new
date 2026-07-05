@@ -8,31 +8,25 @@ export default function PricingPackages() {
   const locale = useLocale();
 
   const packages = [
-    {
-      key: 'marketing',
-      featured: false,
-    },
-    {
-      key: 'performance',
-      featured: true,
-    },
-    {
-      key: 'allInclusive',
-      featured: false,
-    },
+    {key: 'marketing', featured: false},
+    {key: 'performance', featured: true},
+    {key: 'allInclusive', featured: false},
   ];
 
   return (
-    <section id="pricing" className="py-12 bg-gray-50">
+    <section id="pricing" className="scroll-mt-24 bg-white py-14 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-[#2861AD] mb-4">
+        <div className="mb-12 text-center">
+          <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#2861AD]">
+            BOB Manage · Packages
+          </p>
+          <h2 className="mb-3 text-3xl font-bold text-[#1F2D26] md:text-4xl">
             {t('title')}
           </h2>
           <p className="text-lg text-gray-600">{t('subtitle')}</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
           {packages.map((pkg) => {
             const features = Array.from({length: 5}, (_, i) =>
               t(`${pkg.key}.features.${i}`)
@@ -41,32 +35,34 @@ export default function PricingPackages() {
             return (
               <div
                 key={pkg.key}
-                className={`relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl ${
-                  pkg.featured ? 'ring-2 ring-[#2861AD] scale-105' : ''
+                className={`relative flex flex-col overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:shadow-xl ${
+                  pkg.featured
+                    ? 'border-2 border-[#2861AD] shadow-lg md:-my-3'
+                    : 'border border-[#EBECE2] shadow-sm'
                 }`}
               >
                 {pkg.featured && (
-                  <div className="bg-[#2861AD] text-white text-center py-2 px-4 text-sm font-semibold">
+                  <div className="bg-[#F7DD6E] px-4 py-2 text-center text-sm font-bold text-[#122F5A]">
                     {t('performance.popular')}
                   </div>
                 )}
 
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-[#2861AD] mb-3">
+                <div className="flex flex-1 flex-col p-8">
+                  <h3 className="mb-3 text-2xl font-bold text-[#1F2D26]">
                     {t(`${pkg.key}.title`)}
                   </h3>
-                  
+
                   <div className="mb-6">
-                    <span className="text-4xl font-bold text-[#2861AD]">
+                    <span className="text-3xl font-bold text-[#2861AD]">
                       {t(`${pkg.key}.percentage`)}
                     </span>
                   </div>
 
-                  <ul className="space-y-4 mb-6 min-h-[240px]">
+                  <ul className="mb-8 flex-1 space-y-4">
                     {features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <svg
-                          className="w-5 h-5 text-[#2861AD] flex-shrink-0 mt-0.5"
+                          className="mt-0.5 h-5 w-5 shrink-0 text-[#00A569]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -78,7 +74,7 @@ export default function PricingPackages() {
                             d="M5 13l4 4L19 7"
                           />
                         </svg>
-                        <span className="text-gray-700 text-sm leading-relaxed">
+                        <span className="text-sm leading-relaxed text-gray-700">
                           {feature}
                         </span>
                       </li>
@@ -87,13 +83,13 @@ export default function PricingPackages() {
 
                   <Link
                     href={`/${locale}/list-property`}
-                    className={`block w-full text-center px-6 py-3 rounded-lg font-semibold transition-all ${
+                    className={`block w-full rounded-full px-6 py-3 text-center font-bold transition-colors ${
                       pkg.featured
-                        ? 'bg-[#2861AD] text-white hover:bg-[#2861AD]/90 shadow-md'
-                        : 'bg-white text-[#2861AD] border-2 border-[#2861AD] hover:bg-[#2861AD] hover:text-white'
+                        ? 'bg-[#2861AD] text-white shadow-md hover:bg-[#1D4A85]'
+                        : 'border-2 border-[#2861AD] bg-white text-[#2861AD] hover:bg-[#2861AD] hover:text-white'
                     }`}
                   >
-                    Get Started
+                    {t('getStarted')}
                   </Link>
                 </div>
               </div>

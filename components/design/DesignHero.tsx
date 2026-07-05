@@ -48,16 +48,19 @@ export default function DesignHero() {
         </div>
       ))}
 
-      {/* Overlay for Text Readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/40 z-[1]"></div>
+      {/* Overlay for text readability — brand ink, not plain black */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#122F5A]/80 via-[#122F5A]/35 to-[#122F5A]/45 z-[1]"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <p className="mb-3 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#F7DD6E] drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+            Best of Bedz · BOB Designs
+          </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
             {t('title')}
           </h1>
-          <p className="text-lg md:text-xl text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+          <p className="text-lg md:text-xl text-white/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
             {t('subtitle')}
           </p>
         </div>

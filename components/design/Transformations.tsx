@@ -21,7 +21,7 @@ export default function Transformations() {
   const t = useTranslations('design');
 
   return (
-    <section id="transformations" className="bg-[#EEF0DC]/60 py-12 md:py-16">
+    <section id="transformations" className="bg-white py-14 md:py-20">
       <div className="container mx-auto px-4">
         <p className="mb-2 text-center text-[13px] font-semibold uppercase tracking-[0.24em] text-[#2861AD]">
           BOB Designs

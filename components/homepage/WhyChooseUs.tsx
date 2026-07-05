@@ -1,41 +1,40 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
+import BrandIcon from '../BrandIcon';
+
+const REASONS = [
+  {key: 'maximize', icon: 'trendingUp'},
+  {key: 'zeroStress', icon: 'shield'},
+  {key: 'technology', icon: 'cpu'},
+  {key: 'superhost', icon: 'star'},
+  {key: 'datadriven', icon: 'lineChart'},
+  {key: 'sustainable', icon: 'leaf'},
+] as const;
 
 export default function WhyChooseUs() {
   const t = useTranslations('whyChoose');
 
-  const reasons = [
-    {key: 'maximize', icon: '📈', color: 'bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200'},
-    {key: 'zeroStress', icon: '😌', color: 'bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200'},
-    {key: 'technology', icon: '💻', color: 'bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200'},
-    {key: 'superhost', icon: '⭐', color: 'bg-gradient-to-br from-rose-50 to-rose-100 border border-rose-200'},
-    {key: 'datadriven', icon: '📊', color: 'bg-gradient-to-br from-emerald-50 to-emerald-100 border border-emerald-200'},
-    {key: 'sustainable', icon: '🌱', color: 'bg-gradient-to-br from-cyan-50 to-cyan-100 border border-cyan-200'},
-  ];
-
   return (
-    <section className="py-10 md:py-12 bg-cream">
+    <section className="bg-[#EEF0DC]/50 py-14 md:py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2861AD] mb-6">
+        <h2 className="mb-12 text-center text-3xl font-bold text-[#1F2D26] md:text-4xl">
           {t('title')}
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {reasons.map((reason) => (
+        <div className="mx-auto grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {REASONS.map((reason) => (
             <div
               key={reason.key}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center"
+              className="rounded-2xl border border-[#EBECE2] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="flex justify-center mb-4">
-                <div className={`w-16 h-16 ${reason.color} rounded-full flex items-center justify-center text-3xl`}>
-                  {reason.icon}
-                </div>
+              <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[#2861AD]/[0.07] text-[#2861AD]">
+                <BrandIcon name={reason.icon} className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold text-[#2861AD] mb-2">
+              <h3 className="mb-1.5 text-lg font-bold text-[#1F2D26]">
                 {t(`${reason.key}.title`)}
               </h3>
-              <p className="text-[#2861AD]/70">
+              <p className="text-sm leading-relaxed text-gray-600">
                 {t(`${reason.key}.description`)}
               </p>
             </div>

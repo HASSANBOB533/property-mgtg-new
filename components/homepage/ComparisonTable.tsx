@@ -15,43 +15,45 @@ export default function ComparisonTable() {
   ];
 
   return (
-    <section className="py-10 md:py-12 bg-white">
+    <section className="bg-white py-14 md:py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2861AD] mb-6">
+        <h2 className="mb-10 text-center text-3xl font-bold text-[#1F2D26] md:text-4xl">
           {t('title')}
         </h2>
 
-        <div className="max-w-4xl mx-auto overflow-x-auto">
-          <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="mx-auto max-w-4xl overflow-x-auto">
+          <table className="w-full border-collapse overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-[#EBECE2]">
             <thead>
               <tr className="bg-[#2861AD]">
-                <th className="text-left py-2 px-4 font-semibold text-white">Feature</th>
-                <th className="text-center py-2 px-4 font-semibold text-white">
+                <th className="px-5 py-3.5 text-start font-semibold text-white">
+                  {t('feature')}
+                </th>
+                <th className="px-5 py-3.5 text-center font-semibold text-white">
                   {t('bob')}
                 </th>
-                <th className="text-center py-2 px-4 font-semibold text-white">
+                <th className="px-5 py-3.5 text-center font-semibold text-white/80">
                   {t('typical')}
                 </th>
               </tr>
             </thead>
             <tbody>
               {features.map((feature, idx) => (
-                <tr 
-                  key={feature} 
-                  className={`border-b border-gray-200 hover:bg-gray-50 transition-colors ${
-                    idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
+                <tr
+                  key={feature}
+                  className={`border-b border-[#EBECE2] transition-colors hover:bg-[#EEF0DC]/40 ${
+                    idx % 2 === 0 ? 'bg-white' : 'bg-[#EEF0DC]/25'
                   }`}
                 >
-                  <td className="py-2 px-4 text-[#2861AD]">
+                  <td className="px-5 py-3 font-medium text-[#1F2D26]">
                     {t(`features.${feature}`)}
                   </td>
-                  <td className="text-center py-2 px-4">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#F7DD6E] text-[#2861AD] text-lg font-bold">
+                  <td className="px-5 py-3 text-center">
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#F7DD6E] font-bold text-[#122F5A]">
                       ✓
                     </span>
                   </td>
-                  <td className="text-center py-2 px-4">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-200 text-gray-500 text-lg font-bold">
+                  <td className="px-5 py-3 text-center">
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 font-bold text-gray-400">
                       ✗
                     </span>
                   </td>

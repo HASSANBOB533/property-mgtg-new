@@ -1,62 +1,57 @@
 {
   "nav": {
-    "services": "Property Management",
-    "design": "Design & Furnishing",
-    "homeCare": "Home Care",
-    "pricing": "Pricing",
-    "listProperty": "List Property",
+    "listProperty": "List Your Property",
     "ownerPortal": "Owner Portal",
     "getEvaluation": "Book Demo Call"
   },
   "hero": {
-    "headline": "The Art of Property Management",
-    "subheadline": "Egypt's Premier Hospitality & Property Management Company",
-    "ctaPrimary": "Get Free Property Evaluation",
-    "ctaSecondary": "Book Meeting"
+    "headlineArt": "The art of property management.",
+    "headlineScience": "The science of maximum returns.",
+    "support": "Egypt's premier short-stay management company — operations, marketing, design and care for your property, end to end.",
+    "ctaPrimary": "Get Your Free Property Evaluation",
+    "ctaSecondary": "Book a Call"
   },
   "trustBadges": {
     "superhost": "Airbnb Superhost",
-    "rating": "4.9★ Rating",
+    "rating": "4.9★ Guest Rating",
     "properties": "50+ Managed Properties",
-    "support": "24/7 Support"
+    "support": "24/7 Guest Support"
   },
   "services": {
     "title": "Our Owner Services",
-    "propertyManagement": {
-      "title": "Property Management",
-      "subtitle": "The art of property management. The science of maximum returns."
-    },
-    "designFurnishing": {
-      "title": "Design & Furnishing",
-      "subtitle": "Designed to be booked."
-    },
     "umbrella": "The art of property management. The science of maximum returns.",
     "learnMore": "Learn more",
     "manage": {
+      "slogan": "Hands-off management, hands-on returns.",
       "description": "Full short-term-rental management — operations, guests, finances and reporting, end to end."
     },
     "promote": {
+      "slogan": "We fill your calendar.",
       "description": "Marketing & distribution across the major booking platforms, with professional listings that convert."
     },
     "research": {
+      "slogan": "The numbers behind every winning property.",
       "description": "We evaluate your property's short-term-rental potential before you invest a pound in it."
     },
     "designs": {
+      "slogan": "Designed to be booked.",
       "description": "Design, renovation and furnishing that turn a space into a booking magnet."
     },
     "homeCare": {
+      "slogan": "Where quality meets hospitality.",
       "description": "Professional housekeeping and care that keeps every stay five-star ready."
     }
   },
-  "comprehensiveServices": {
-    "title": "Comprehensive Property Management Services",
+  "manageSection": {
+    "title": "Everything your property needs, under one roof",
+    "intro": "One team runs your property like a hospitality business — you watch the returns.",
     "design": {
       "title": "Design & Furnishing",
       "description": "Transform your space into a guest-ready, booking-magnet property"
     },
     "listing": {
       "title": "Listing & Marketing",
-      "description": "Multi-OTA presence with professional photos and compelling descriptions"
+      "description": "Multi-platform presence with professional photos and compelling descriptions"
     },
     "revenue": {
       "title": "Revenue Management",
@@ -81,12 +76,13 @@
   },
   "pricing": {
     "title": "Choose Your Package",
-    "subtitle": "Flexible plans designed to fit your needs",
+    "subtitle": "Three levels of hands-off — pick how much you want us to carry.",
+    "getStarted": "Get Started",
     "marketing": {
       "title": "Marketing Only",
       "percentage": "10-15%",
       "features": [
-        "Multi-OTA listing (Airbnb, Booking.com, Vrbo)",
+        "Multi-platform listing (Airbnb, Booking.com, Vrbo)",
         "Professional photography",
         "Dynamic pricing optimization",
         "Monthly performance reporting",
@@ -116,6 +112,19 @@
         "Owner only handles major improvements"
       ]
     }
+  },
+  "promoteSection": {
+    "title": "Your property, everywhere guests book",
+    "description": "Professional listings across the world's biggest booking platforms — photographed, written and priced to convert, managed from one calendar so it never double-books.",
+    "partnersLabel": "Our distribution partners"
+  },
+  "researchSection": {
+    "title": "Know the numbers before you invest",
+    "description": "Thinking of buying, furnishing or converting a property for short stays? We study your unit and its area first — expected occupancy, nightly rates and annual returns — so you get a clear go or no-go before spending a pound.",
+    "point1": "Area & compound demand analysis",
+    "point2": "Nightly rate & occupancy forecast",
+    "point3": "Furnishing budget & payback estimate",
+    "cta": "Request a Property Study"
   },
   "ownerPortal": {
     "title": "Your Property at Your Fingertips",
@@ -164,7 +173,7 @@
     },
     "technology": {
       "title": "Smart Technology",
-      "description": "Powered by industry-leading Guesty platform"
+      "description": "Powered by industry-leading hospitality platforms"
     },
     "superhost": {
       "title": "Superhost Standards",
@@ -180,7 +189,8 @@
     }
   },
   "comparison": {
-    "title": "Best of Bedz vs Typical Agency",
+    "title": "Best of Bedz vs a Typical Agency",
+    "feature": "Feature",
     "bob": "Best of Bedz",
     "typical": "Typical Agency",
     "features": {
@@ -188,7 +198,7 @@
       "pricing": "Dynamic Pricing",
       "support": "24/7 Support",
       "transparency": "Full Transparency",
-      "multiOTA": "Multi-OTA Management",
+      "multiOTA": "Multi-Platform Management",
       "superhost": "Superhost Guarantee"
     }
   },
@@ -200,23 +210,27 @@
   "footer": {
     "company": {
       "name": "Best of Bedz",
-      "tagline": "Premium Property Management & Hospitality Solutions in Egypt",
+      "tagline": "The art of property management. The science of maximum returns.",
       "address": "New Cairo, 5th Settlement, Egypt",
       "phone": "+201227580022",
-      "email": "Cs@bestofbedz.com"
+      "email": "cs@bestofbedz.com"
     },
+    "servicesTitle": "Owner Services",
     "quickLinks": {
       "title": "Quick Links",
       "about": "About Us",
-      "services": "Services",
+      "services": "Our Services",
       "pricing": "Pricing",
       "listProperty": "List Your Property",
       "ownerPortal": "Owner Portal",
       "contact": "Contact"
     },
+    "contactTitle": "Contact",
     "social": {
       "title": "Follow Us"
-    }
+    },
+    "houseLine": "Part of the house of Best of Bedz — from B to Z.",
+    "rights": "All rights reserved."
   },
   "design": {
     "hero": {
@@ -253,62 +267,58 @@
     "pricing": {
       "title": "Design & Furnishing Cost",
       "designFee": "Design & Furnishing Fee: 20% of total project cost",
-      "markup": "Equipment & Furniture Markup: 5-10%"
+      "designFeeDesc": "Professional design services and project management",
+      "markup": "Equipment & Furniture Markup: 5-10%",
+      "markupDesc": "Transparent pricing on all furniture and equipment"
     },
     "gallery": {
       "title": "Our Projects",
+      "dragHint": "Drag the slider to see each transformation",
+      "location": "Location",
+      "type": "Type",
+      "style": "Style",
+      "before": "Before",
+      "after": "After",
+      "imageComingSoon": "Image coming soon",
       "marina": {
         "title": "Marina 5 Resort, North Coast Egypt",
         "location": "Marina 5 Resort, North Coast Egypt",
         "type": "Apartment/Chalet",
         "style": "Modern Coastal Luxury",
-        "before": "Before",
-        "after": "After"
+        "rooms": {
+          "living": "Living Room",
+          "bedroom": "Bedroom",
+          "bathroom": "Bathroom",
+          "kitchen": "Kitchen"
+        }
       },
       "stella2": {
         "title": "Stella – Sidi Abdelrahman Renovation",
         "location": "Sidi Abdelrahman, Egypt",
         "type": "Apartment/Chalet",
         "style": "Modern Coastal Minimalism",
-        "before": "Before",
-        "after": "After"
+        "rooms": {
+          "kitchen": "Kitchen",
+          "reception": "Reception",
+          "bedroom": "Bedroom",
+          "bathroom": "Bathroom"
+        }
       },
       "marina7": {
         "title": "Marina 7 Resort, North Coast Egypt",
         "location": "Marina 7 Resort, North Coast Egypt",
         "type": "Apartment/Chalet",
         "style": "Modern Contemporary Coastal",
-        "before": "Before",
-        "after": "After"
-      },
-      "comingSoon": "Coming Soon"
+        "rooms": {
+          "dining": "Dining Area",
+          "reception": "Reception",
+          "bedroom": "Bedroom",
+          "bathroom": "Bathroom"
+        }
+      }
     },
     "transformationsTitle": "Transformations",
     "transformationsComingSoon": "Watch spaces become booking magnets — our design, renovation, decoration and furnishing films are on their way. Check back soon."
-  },
-  "marina": {
-    "title": "Marina 5 Resort, North Coast Egypt",
-    "location": "Marina 5 Resort, North Coast Egypt",
-    "type": "Apartment/Chalet",
-    "style": "Modern Coastal Luxury",
-    "before": "Before",
-    "after": "After"
-  },
-  "stella2": {
-    "title": "Stella – Sidi Abdelrahman Renovation",
-    "location": "Sidi Abdelrahman, Egypt",
-    "type": "Apartment/Chalet",
-    "style": "Modern Coastal Minimalism",
-    "before": "Before",
-    "after": "After"
-  },
-  "marina7": {
-    "title": "Marina 7 Resort, North Coast Egypt",
-    "location": "Marina 7 Resort, North Coast Egypt",
-    "type": "Apartment/Chalet",
-    "style": "Modern Contemporary Coastal",
-    "before": "Before",
-    "after": "After"
   },
   "listProperty": {
     "title": "List Your Property",
@@ -380,6 +390,9 @@
     },
     "submit": "Submit Your Property for Evaluation",
     "confirmation": "We'll review your submission and contact you within 24-48 hours"
+  },
+  "mobileBar": {
+    "callUs": "Call Us"
   },
   "scheduleMeeting": {
     "title": "Book a Demo Call",

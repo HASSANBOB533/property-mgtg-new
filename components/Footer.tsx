@@ -3,6 +3,15 @@
 import {useTranslations, useLocale} from 'next-intl';
 import Link from 'next/link';
 
+/** Owner services column — brand-locked names, never translated. */
+const SERVICE_LINKS = [
+  {label: 'BOB Manage', href: '#manage'},
+  {label: 'BOB Promote', href: '#promote'},
+  {label: 'BOB Research', href: '#research'},
+  {label: 'BOB Designs', href: '/design'},
+  {label: 'BOB Home Care', href: 'https://bobhomecare.com', external: true},
+] as const;
+
 export default function Footer() {
   const t = useTranslations('footer');
   const locale = useLocale();
@@ -16,12 +25,15 @@ export default function Footer() {
     {name: 'Snapchat', url: 'https://snapchat.com/t/EWTMkLhy', icon: 'M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.54 0-.958.089-1.272.149-.211.043-.391.074-.54.074-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226-.031-.063-.052-.15-.055-.225-.015-.243.165-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809-.121-.029-.24-.074-.346-.119-.732-.271-1.336-.735-1.232-1.218.062-.254.27-.508.673-.629.135-.045.27-.061.42-.061.12 0 .283.015.435.074.375.164.704.27 1.048.27.18 0 .313-.029.405-.074-.007-.18-.018-.344-.03-.524l-.004-.06c-.104-1.628-.229-3.654.3-4.848 1.583-3.545 4.94-3.821 5.93-3.821h.424z'},
   ];
 
+  const resolve = (href: string) =>
+    href.startsWith('#') || href.startsWith('/') ? `/${locale}${href}` : href;
+
   return (
     <footer className="bg-[#2861AD] text-white mt-20" role="contentinfo">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Company Info */}
-          <div>
+      <div className="container mx-auto px-4 pt-12 pb-6">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5 mb-8">
+          {/* Brand */}
+          <div className="lg:col-span-2">
             <img
               src="/logo/bob-logo-6-white.svg"
               alt="Best of Bedz"
@@ -29,74 +41,114 @@ export default function Footer() {
               height={52}
               className="mb-4 h-12 w-auto"
             />
-            <p className="text-sm mb-4 opacity-90">{t('company.tagline')}</p>
-            <address className="space-y-2 text-sm opacity-80 not-italic">
-              <p>{t('company.address')}</p>
-              <p dir="ltr" className="inline-block">{t('company.phone')}</p>
-              <p>{t('company.email')}</p>
-            </address>
-          </div>
-
-          {/* Quick Links */}
-          <nav aria-label="Footer navigation">
-            <h3 className="font-semibold text-lg mb-4">{t('quickLinks.title')}</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href={`/${locale}#about`} className="opacity-80 hover:opacity-100 transition-opacity">
-                  {t('quickLinks.about')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}#services`} className="opacity-80 hover:opacity-100 transition-opacity">
-                  {t('quickLinks.services')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}#pricing`} className="opacity-80 hover:opacity-100 transition-opacity">
-                  {t('quickLinks.pricing')}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${locale}/list-property`} className="opacity-80 hover:opacity-100 transition-opacity">
-                  {t('quickLinks.listProperty')}
-                </Link>
-              </li>
-              <li>
-                <a href="https://bestofbedz.guestyowners.com/login" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
-                  {t('quickLinks.ownerPortal')}
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          {/* Social Media */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">{t('social.title')}</h3>
-            <div className="flex flex-wrap gap-4" role="list">
+            <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F7DD6E]">
+              Best of Bedz Owners
+            </p>
+            <p className="max-w-xs text-sm italic text-white/85">{t('company.tagline')}</p>
+            <div className="mt-5 flex flex-wrap gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="opacity-70 hover:opacity-100 transition-opacity"
+                  className="text-white/70 transition-colors hover:text-[#F7DD6E]"
                   aria-label={`Follow us on ${social.name}`}
-                  role="listitem"
                 >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d={social.icon} />
                   </svg>
                 </a>
               ))}
             </div>
           </div>
+
+          {/* Owner services */}
+          <nav aria-label="Owner services">
+            <h3 className="mb-3 text-base font-bold">{t('servicesTitle')}</h3>
+            <ul className="space-y-2 text-sm">
+              {SERVICE_LINKS.map((s) =>
+                'external' in s && s.external ? (
+                  <li key={s.label}>
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/80 transition-colors hover:text-[#F7DD6E]"
+                    >
+                      {s.label}
+                    </a>
+                  </li>
+                ) : (
+                  <li key={s.label}>
+                    <Link href={resolve(s.href)} className="text-white/80 transition-colors hover:text-[#F7DD6E]">
+                      {s.label}
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+          </nav>
+
+          {/* Quick links */}
+          <nav aria-label="Footer navigation">
+            <h3 className="mb-3 text-base font-bold">{t('quickLinks.title')}</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href={`/${locale}#services`} className="text-white/80 transition-colors hover:text-[#F7DD6E]">
+                  {t('quickLinks.services')}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}#pricing`} className="text-white/80 transition-colors hover:text-[#F7DD6E]">
+                  {t('quickLinks.pricing')}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/list-property`} className="text-white/80 transition-colors hover:text-[#F7DD6E]">
+                  {t('quickLinks.listProperty')}
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://bestofbedz.guestyowners.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 transition-colors hover:text-[#F7DD6E]"
+                >
+                  {t('quickLinks.ownerPortal')}
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Contact */}
+          <div>
+            <h3 className="mb-3 text-base font-bold">{t('contactTitle')}</h3>
+            <address className="space-y-2 text-sm not-italic text-white/80">
+              <p>
+                <a href="mailto:cs@bestofbedz.com" className="transition-colors hover:text-[#F7DD6E]">
+                  {t('company.email')}
+                </a>
+              </p>
+              <p>
+                <a href="tel:+201227580022" dir="ltr" className="inline-block transition-colors hover:text-[#F7DD6E]">
+                  {t('company.phone')}
+                </a>
+              </p>
+              <p>{t('company.address')}</p>
+            </address>
+          </div>
         </div>
 
-        <div className="border-t border-[#F7DD6E]/30 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-3 text-center text-sm opacity-90">
-          <p>© {new Date().getFullYear()} Best of Bedz. All rights reserved.</p>
-          <p className="font-semibold text-[#F7DD6E]">
-            The art of property management. The science of maximum returns.
-          </p>
+        {/* Divider */}
+        <div className="border-t border-white/20 pt-5">
+          <div className="flex flex-col items-center justify-between gap-2 text-center text-sm text-white/80 md:flex-row">
+            <p>
+              © {new Date().getFullYear()} Best of Bedz. {t('rights')}
+            </p>
+            <p className="font-semibold text-[#F7DD6E]">{t('houseLine')}</p>
+          </div>
         </div>
       </div>
     </footer>

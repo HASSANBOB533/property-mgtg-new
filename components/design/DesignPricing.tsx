@@ -1,37 +1,34 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
+import BrandIcon from '../BrandIcon';
 
 export default function DesignPricing() {
   const t = useTranslations('design.pricing');
 
   return (
-    <section className="py-8 md:py-10 bg-gradient-to-br from-blue-50 to-gray-50">
+    <section className="bg-white py-14 md:py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2861AD] mb-8">
+        <h2 className="mb-10 text-center text-3xl font-bold text-[#1F2D26] md:text-4xl">
           {t('title')}
         </h2>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white border-2 border-[#2861AD] rounded-xl p-6 hover:shadow-xl transition-all duration-300">
-              <div className="text-4xl mb-3 text-center">💎</div>
-              <h3 className="text-xl font-bold text-[#2861AD] mb-2 text-center">
-                {t('designFee')}
-              </h3>
-              <p className="text-center text-[#2861AD]/70 text-sm">
-                Professional design services and project management
-              </p>
+        <div className="mx-auto max-w-3xl">
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-[#EBECE2] bg-[#EEF0DC]/40 p-7 transition-shadow duration-300 hover:shadow-lg">
+              <span className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[#2861AD] text-white">
+                <BrandIcon name="palette" className="h-6 w-6" />
+              </span>
+              <h3 className="mb-2 text-lg font-bold text-[#1F2D26]">{t('designFee')}</h3>
+              <p className="text-sm leading-relaxed text-gray-600">{t('designFeeDesc')}</p>
             </div>
 
-            <div className="bg-white border-2 border-[#2861AD] rounded-xl p-6 hover:shadow-xl transition-all duration-300">
-              <div className="text-4xl mb-3 text-center">🛋️</div>
-              <h3 className="text-xl font-bold text-[#2861AD] mb-2 text-center">
-                {t('markup')}
-              </h3>
-              <p className="text-center text-[#2861AD]/70 text-sm">
-                Transparent pricing on all furniture and equipment
-              </p>
+            <div className="rounded-2xl border border-[#EBECE2] bg-[#EEF0DC]/40 p-7 transition-shadow duration-300 hover:shadow-lg">
+              <span className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[#2861AD] text-white">
+                <BrandIcon name="armchair" className="h-6 w-6" />
+              </span>
+              <h3 className="mb-2 text-lg font-bold text-[#1F2D26]">{t('markup')}</h3>
+              <p className="text-sm leading-relaxed text-gray-600">{t('markupDesc')}</p>
             </div>
           </div>
         </div>
