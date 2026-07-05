@@ -83,7 +83,7 @@ export default function ComparisonTable() {
                   </svg>
                 </span>
                 <div>
-                  <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-400 md:hidden">
+                  <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500 md:hidden">
                     {t('typical')}
                   </p>
                   <p className="text-sm leading-relaxed text-gray-500">

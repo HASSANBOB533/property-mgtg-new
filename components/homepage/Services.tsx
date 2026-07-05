@@ -70,10 +70,9 @@ export default function Services() {
               <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#EBECE2] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#2861AD] hover:bg-[#2861AD] hover:shadow-xl">
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute end-4 top-4 text-5xl font-bold leading-none text-[#2861AD]/[0.08] transition-colors duration-300 group-hover:text-white/15"
-                >
-                  {String(idx + 1).padStart(2, '0')}
-                </span>
+                  data-num={String(idx + 1).padStart(2, '0')}
+                  className="pointer-events-none absolute end-4 top-4 text-5xl font-bold leading-none text-[#2861AD]/[0.08] transition-colors duration-300 after:content-[attr(data-num)] group-hover:text-white/15"
+                />
                 <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[#2861AD] text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#2861AD]">
                   <BrandIcon name={s.icon} className="h-6 w-6" />
                 </div>

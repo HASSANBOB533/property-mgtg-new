@@ -20,7 +20,7 @@ export default function MobileBottomBar() {
         </a>
         <a
           href="tel:+201227580022"
-          className="flex items-center justify-center gap-2 rounded-full bg-[#00A569] px-4 py-3 text-center text-sm font-bold text-white transition-colors hover:bg-[#008a57]"
+          className="flex items-center justify-center gap-2 rounded-full bg-[#00A569] px-4 py-3 text-center text-sm font-bold text-[#0F1A14] transition-colors hover:bg-[#00b975]"
         >
           <BrandIcon name="phone" className="h-4 w-4" />
           {tm('callUs')}

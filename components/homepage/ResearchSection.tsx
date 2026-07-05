@@ -44,10 +44,9 @@ export default function ResearchSection() {
               >
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-4xl font-bold leading-none text-[#2861AD]/[0.08]"
-                >
-                  {String(idx + 1).padStart(2, '0')}
-                </span>
+                  data-num={String(idx + 1).padStart(2, '0')}
+                  className="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-4xl font-bold leading-none text-[#2861AD]/[0.08] after:content-[attr(data-num)]"
+                />
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#2861AD] text-white">
                   <BrandIcon name={p.icon} className="h-5.5 w-5.5" />
                 </span>

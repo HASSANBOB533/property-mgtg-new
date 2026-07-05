@@ -59,9 +59,11 @@ export default function DesignProcess() {
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#2861AD] text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#2861AD]">
                   <BrandIcon name={step.icon} className="h-6 w-6" />
                 </span>
-                <span className="text-4xl font-bold text-[#2861AD]/10 transition-colors duration-300 group-hover:text-white/15">
-                  {String(idx + 1).padStart(2, '0')}
-                </span>
+                <span
+                  aria-hidden
+                  data-num={String(idx + 1).padStart(2, '0')}
+                  className="text-4xl font-bold leading-none text-[#2861AD]/10 transition-colors duration-300 after:content-[attr(data-num)] group-hover:text-white/15"
+                />
               </div>
               <h3 className="mb-1.5 text-lg font-bold text-[#1F2D26] transition-colors duration-300 group-hover:text-white">
                 {t(`${step.key}.title`)}

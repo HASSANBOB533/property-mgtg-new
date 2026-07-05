@@ -12,6 +12,19 @@ export function generateStaticParams() {
   return locales.map((locale) => ({locale}));
 }
 
+export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
+  const {locale} = await params;
+  const isAr = locale === 'ar';
+  return {
+    title: isAr
+      ? 'Best of Bedz Owners — فنّ إدارة العقارات'
+      : 'Best of Bedz Owners — The Art of Property Management',
+    description: isAr
+      ? 'إدارة رائدة للإيجار قصير المدى — تسويق وتصميم وعناية بعقارك من البداية إلى النهاية لتحقيق أعلى العوائد.'
+      : 'Premier short-stay property management — marketing, design and end-to-end care that maximize your rental returns.',
+  };
+}
+
 export default async function LocaleLayout({
   children,
   params
@@ -36,8 +49,7 @@ export default async function LocaleLayout({
         {/* SEO Meta Tags */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Best of Bedz (BOB) - Premium property management services in Egypt. Maximize your rental revenue with professional marketing, design, and all-inclusive property management." />
-        <meta name="keywords" content="property management, rental property, vacation rental, airbnb management, property design, Egypt property management, Best of Bedz, BOB" />
+        <meta name="keywords" content="property management, rental property, vacation rental, airbnb management, property design, short-stay management, Best of Bedz, BOB" />
         <meta name="author" content="Best of Bedz LLC" />
         
         {/* Open Graph / Facebook */}
@@ -69,11 +81,6 @@ export default async function LocaleLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#2861AD" />
         
-        {/* Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        
         {/* Structured Data (JSON-LD) */}
         <script
           type="application/ld+json"
@@ -85,7 +92,7 @@ export default async function LocaleLayout({
               alternateName: 'BOB Property Management',
               url: 'https://bobpropertymanagement.com',
               logo: 'https://bobpropertymanagement.com/images/logo.svg',
-              description: 'Premium property management services in Egypt',
+              description: 'Premier short-stay property management — marketing, design and end-to-end care.',
               address: {
                 '@type': 'PostalAddress',
                 addressCountry: 'EG',

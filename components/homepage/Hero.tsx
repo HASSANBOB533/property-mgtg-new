@@ -20,11 +20,16 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-[540px] flex-col overflow-hidden md:min-h-[680px]">
-      {/* Background photo */}
+      {/* Background photo — next/image so the LCP asset is preloaded and sized per device */}
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{backgroundImage: 'url(/hero-background.jpg)'}}
+        <Image
+          src="/hero-background.jpg"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Cinematic brand gradient — ink from the text side, photo breathes on the other */}
         <div

@@ -81,17 +81,21 @@ export default function DesignHero() {
         </div>
       </div>
 
-      {/* Carousel indicators */}
-      <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+      {/* Carousel indicators — 32px hit areas around the small visual dots */}
+      <div className="absolute bottom-2 left-1/2 z-10 flex -translate-x-1/2">
         {SLIDES.map((slide, index) => (
           <button
             key={slide}
             onClick={() => setCurrentSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'w-8 bg-[#F7DD6E]' : 'w-2 bg-white/50 hover:bg-white/75'
-            }`}
+            className="flex h-8 min-w-8 items-center justify-center px-1"
             aria-label={`Go to slide ${index + 1}`}
-          />
+          >
+            <span
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'w-8 bg-[#F7DD6E]' : 'w-2 bg-white/50'
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>
