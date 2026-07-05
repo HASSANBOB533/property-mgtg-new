@@ -47,7 +47,7 @@ export default function Services() {
               <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#EBECE2] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#2861AD] hover:bg-[#2861AD] hover:shadow-xl">
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute -top-2 end-3 text-6xl font-bold leading-none text-[#2861AD]/[0.07] transition-colors duration-300 group-hover:text-white/10"
+                  className="pointer-events-none absolute end-4 top-4 text-5xl font-bold leading-none text-[#2861AD]/[0.08] transition-colors duration-300 group-hover:text-white/15"
                 >
                   {String(idx + 1).padStart(2, '0')}
                 </span>

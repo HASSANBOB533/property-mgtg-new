@@ -44,7 +44,7 @@ export default function ResearchSection() {
               >
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute -top-1 end-3 text-5xl font-bold leading-none text-[#2861AD]/[0.07]"
+                  className="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-4xl font-bold leading-none text-[#2861AD]/[0.08]"
                 >
                   {String(idx + 1).padStart(2, '0')}
                 </span>

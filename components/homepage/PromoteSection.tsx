@@ -3,13 +3,14 @@
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
 
+/** Official wordmark SVGs, optically balanced per logo (x-heights differ). */
 const PARTNERS = [
-  {name: 'Airbnb', logo: '/partner-airbnb.png', width: 140, height: 40},
-  {name: 'Booking.com', logo: '/partner-booking.png', width: 140, height: 40},
-  {name: 'Vrbo', logo: '/partner-vrbo.png', width: 140, height: 40},
-  {name: 'Expedia', logo: '/partner-expedia.png', width: 180, height: 50},
-  {name: 'Agoda', logo: '/partner-agoda.jpg', width: 140, height: 40},
-  {name: 'Trip.com', logo: '/partner-trip.png', width: 140, height: 40},
+  {name: 'Airbnb', logo: '/partners/airbnb.svg', width: 320, height: 100, maxH: 30},
+  {name: 'Booking.com', logo: '/partners/booking.svg', width: 119, height: 20, maxH: 22},
+  {name: 'Vrbo', logo: '/partners/vrbo.svg', width: 125, height: 40, maxH: 28},
+  {name: 'Expedia', logo: '/partners/expedia.svg', width: 265, height: 53, maxH: 26},
+  {name: 'Agoda', logo: '/partners/agoda.svg', width: 74, height: 30, maxH: 30},
+  {name: 'Trip.com', logo: '/partners/tripcom.svg', width: 135, height: 33, maxH: 26},
 ];
 
 export default function PromoteSection() {
@@ -54,7 +55,7 @@ export default function PromoteSection() {
                 width={partner.width}
                 height={partner.height}
                 className="object-contain"
-                style={{width: 'auto', maxHeight: '32px'}}
+                style={{width: 'auto', maxWidth: '100%', maxHeight: `${partner.maxH}px`}}
               />
             </div>
           ))}
