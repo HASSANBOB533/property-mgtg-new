@@ -18,7 +18,7 @@ export default function OwnerPortalSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-gradient-to-br from-[#122F5A] to-[#2861AD] py-10 text-white md:py-20">
+    <section className="bg-gradient-to-br from-[#2861AD] to-[#1D4A85] py-10 text-white md:py-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           {/* Copy + feature selector */}
