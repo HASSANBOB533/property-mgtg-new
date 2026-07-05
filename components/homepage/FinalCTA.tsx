@@ -9,7 +9,7 @@ export default function FinalCTA() {
   const isRTL = locale === 'ar';
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#2861AD] via-[#1D4A85] to-[#122F5A] py-16 text-white md:py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#2861AD] via-[#1D4A85] to-[#122F5A] py-12 text-white md:py-20">
       <Image
         src="/logo/bob-swirl-white.svg"
         alt=""

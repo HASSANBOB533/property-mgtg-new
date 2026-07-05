@@ -16,9 +16,9 @@ export default function ResearchSection() {
   const locale = useLocale();
 
   return (
-    <section id="research" className="scroll-mt-24 bg-white py-14 md:py-20">
+    <section id="research" className="scroll-mt-24 bg-white py-10 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div>
             <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#2861AD]">
               BOB Research
@@ -36,12 +36,18 @@ export default function ResearchSection() {
             </Link>
           </div>
 
-          <div className="flex flex-col gap-4">
-            {POINTS.map((p) => (
+          <div className="flex flex-col gap-3 md:gap-4">
+            {POINTS.map((p, idx) => (
               <div
                 key={p.key}
-                className="flex items-center gap-4 rounded-2xl border border-[#EBECE2] bg-[#EEF0DC]/40 p-5"
+                className="relative flex items-center gap-4 overflow-hidden rounded-2xl border border-[#EBECE2] bg-[#EEF0DC]/40 p-4 md:p-5"
               >
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -top-1 end-3 text-5xl font-bold leading-none text-[#2861AD]/[0.07]"
+                >
+                  {String(idx + 1).padStart(2, '0')}
+                </span>
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#2861AD] text-white">
                   <BrandIcon name={p.icon} className="h-5.5 w-5.5" />
                 </span>

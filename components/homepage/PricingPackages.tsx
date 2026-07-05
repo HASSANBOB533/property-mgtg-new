@@ -14,9 +14,9 @@ export default function PricingPackages() {
   ];
 
   return (
-    <section id="pricing" className="scroll-mt-24 bg-white py-14 md:py-20">
+    <section id="pricing" className="scroll-mt-24 bg-white py-10 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center md:mb-12">
           <p className="mb-2 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#2861AD]">
             BOB Manage · Packages
           </p>
@@ -26,7 +26,8 @@ export default function PricingPackages() {
           <p className="text-lg text-gray-600">{t('subtitle')}</p>
         </div>
 
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
+        {/* Mobile: swipeable snap carousel · Desktop: 3-up grid */}
+        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-auto md:grid md:max-w-6xl md:snap-none md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pb-0">
           {packages.map((pkg) => {
             const features = Array.from({length: 5}, (_, i) =>
               t(`${pkg.key}.features.${i}`)
@@ -35,7 +36,7 @@ export default function PricingPackages() {
             return (
               <div
                 key={pkg.key}
-                className={`relative flex flex-col overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:shadow-xl ${
+                className={`relative flex min-w-[82%] shrink-0 snap-center flex-col overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:shadow-xl sm:min-w-[55%] md:min-w-0 md:shrink ${
                   pkg.featured
                     ? 'border-2 border-[#2861AD] shadow-lg md:-my-3'
                     : 'border border-[#EBECE2] shadow-sm'
@@ -53,7 +54,7 @@ export default function PricingPackages() {
                   </h3>
 
                   <div className="mb-6">
-                    <span className="text-3xl font-bold text-[#2861AD]">
+                    <span className="text-3xl font-bold tabular-nums text-[#2861AD]">
                       {t(`${pkg.key}.percentage`)}
                     </span>
                   </div>

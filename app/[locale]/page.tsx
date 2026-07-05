@@ -1,5 +1,4 @@
 import Hero from '@/components/homepage/Hero';
-import TrustBadges from '@/components/homepage/TrustBadges';
 import Services from '@/components/homepage/Services';
 import ManageSection from '@/components/homepage/ManageSection';
 import PricingPackages from '@/components/homepage/PricingPackages';
@@ -19,7 +18,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TrustBadges />
       <Services />
       <ManageSection />
       <PricingPackages />

@@ -82,9 +82,41 @@
   }
 }
 
+/* Partner-logo marquee (reduced-motion users get a static row via the
+   global animation kill-switch below) */
+@keyframes bob-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes bob-marquee-rtl {
+  from { transform: translateX(0); }
+  to { transform: translateX(50%); }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Hide scrollbars on snap carousels while keeping them scrollable */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: bob-marquee 36s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+  [dir="rtl"] .marquee-track {
+    animation-name: bob-marquee-rtl;
   }
   
   /* Screen reader only - hide visually but keep for screen readers */
