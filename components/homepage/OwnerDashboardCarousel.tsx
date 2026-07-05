@@ -76,7 +76,7 @@ export default function OwnerDashboardCarousel() {
           {/* Navigation Arrows on Mobile */}
           <button
             onClick={goToPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-[#2F63AD] hover:bg-[#2557a0] text-white rounded-full p-2 shadow-lg transition-all hover:scale-110 z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-[#2861AD] hover:bg-[#2861AD] text-white rounded-full p-2 shadow-lg transition-all hover:scale-110 z-10"
             aria-label="Previous slide"
           >
             <svg
@@ -97,7 +97,7 @@ export default function OwnerDashboardCarousel() {
 
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-[#2F63AD] hover:bg-[#2557a0] text-white rounded-full p-2 shadow-lg transition-all hover:scale-110 z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-[#2861AD] hover:bg-[#2861AD] text-white rounded-full p-2 shadow-lg transition-all hover:scale-110 z-10"
             aria-label="Next slide"
           >
             <svg
@@ -134,7 +134,7 @@ export default function OwnerDashboardCarousel() {
                 onClick={() => goToSlide(index)}
                 className={`h-3 rounded-full transition-all ${
                   index === currentIndex
-                    ? 'w-8 bg-[#F9DE6A]'
+                    ? 'w-8 bg-[#F7DD6E]'
                     : 'w-3 bg-white/40 hover:bg-white/60'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}

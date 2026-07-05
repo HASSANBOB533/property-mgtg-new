@@ -21,14 +21,31 @@
     "support": "24/7 Support"
   },
   "services": {
-    "title": "Our Services",
+    "title": "Our Owner Services",
     "propertyManagement": {
       "title": "Property Management",
-      "subtitle": "The Art of Maximizing Returns"
+      "subtitle": "The art of property management. The science of maximum returns."
     },
     "designFurnishing": {
       "title": "Design & Furnishing",
-      "subtitle": "Transform Spaces Into Experiences"
+      "subtitle": "Designed to be booked."
+    },
+    "umbrella": "The art of property management. The science of maximum returns.",
+    "learnMore": "Learn more",
+    "manage": {
+      "description": "Full short-term-rental management — operations, guests, finances and reporting, end to end."
+    },
+    "promote": {
+      "description": "Marketing & distribution across the major booking platforms, with professional listings that convert."
+    },
+    "research": {
+      "description": "We evaluate your property's short-term-rental potential before you invest a pound in it."
+    },
+    "designs": {
+      "description": "Design, renovation and furnishing that turn a space into a booking magnet."
+    },
+    "homeCare": {
+      "description": "Professional housekeeping and care that keeps every stay five-star ready."
     }
   },
   "comprehensiveServices": {
@@ -265,7 +282,9 @@
         "after": "After"
       },
       "comingSoon": "Coming Soon"
-    }
+    },
+    "transformationsTitle": "Transformations",
+    "transformationsComingSoon": "Watch spaces become booking magnets — our design, renovation, decoration and furnishing films are on their way. Check back soon."
   },
   "marina": {
     "title": "Marina 5 Resort, North Coast Egypt",

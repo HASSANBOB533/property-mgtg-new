@@ -20,26 +20,28 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex items-center gap-1 border border-gray-300 rounded-lg overflow-hidden">
+    <div className="flex items-center rounded-full border border-white/25 bg-white/10 p-0.5">
       <button
         onClick={() => switchLocale('en')}
-        className={`px-3 py-1 text-sm font-medium transition-colors ${
+        aria-pressed={locale === 'en'}
+        className={`rounded-full px-3 py-1 text-sm font-bold transition-colors ${
           locale === 'en'
-            ? 'bg-blue-primary text-white'
-            : 'bg-white text-dark-text hover:bg-gray-100'
+            ? 'bg-white text-[#2861AD] shadow-sm'
+            : 'text-white/80 hover:text-white'
         }`}
       >
         EN
       </button>
       <button
         onClick={() => switchLocale('ar')}
-        className={`px-3 py-1 text-sm font-medium transition-colors ${
+        aria-pressed={locale === 'ar'}
+        className={`rounded-full px-3 py-1 text-sm font-bold transition-colors ${
           locale === 'ar'
-            ? 'bg-blue-primary text-white'
-            : 'bg-white text-dark-text hover:bg-gray-100'
+            ? 'bg-white text-[#2861AD] shadow-sm'
+            : 'text-white/80 hover:text-white'
         }`}
       >
-        AR
+        ع
       </button>
     </div>
   );

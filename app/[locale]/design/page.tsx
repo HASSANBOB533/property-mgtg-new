@@ -3,6 +3,7 @@ import DesignHero from '@/components/design/DesignHero';
 import DesignProcess from '@/components/design/DesignProcess';
 import DesignPricing from '@/components/design/DesignPricing';
 import ProjectGallery from '@/components/design/ProjectGallery';
+import Transformations from '@/components/design/Transformations';
 
 export default function DesignPage() {
   return (
@@ -11,6 +12,7 @@ export default function DesignPage() {
       <DesignProcess />
       <DesignPricing />
       <ProjectGallery />
+      <Transformations />
     </>
   );
 }

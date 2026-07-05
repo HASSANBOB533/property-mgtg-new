@@ -145,7 +145,7 @@ self.__SERVER_FILES_MANIFEST={
       "isExperimentalCompile": false
     }
   },
-  "appDir": "/home/ubuntu/property-mgtg-new",
+  "appDir": "/Users/hassan/Downloads/Claude/Projects/property-mgtg-new",
   "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",

@@ -17,16 +17,18 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#2F63AD] text-white mt-20" role="contentinfo">
+    <footer className="bg-[#2861AD] text-white mt-20" role="contentinfo">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <div className="text-2xl font-bold mb-4" aria-label="Best of Bedz">
-              <span className="text-[#2F63AD]">B</span>
-              <span className="text-[#F9DE6A]">O</span>
-              <span className="text-[#2F63AD]">B</span>
-            </div>
+            <img
+              src="/logo/bob-logo-6-white.svg"
+              alt="Best of Bedz"
+              width={95}
+              height={52}
+              className="mb-4 h-12 w-auto"
+            />
             <p className="text-sm mb-4 opacity-90">{t('company.tagline')}</p>
             <address className="space-y-2 text-sm opacity-80 not-italic">
               <p>{t('company.address')}</p>
@@ -90,8 +92,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#F9DE6A]/30 mt-8 pt-8 text-center text-sm opacity-90">
+        <div className="border-t border-[#F7DD6E]/30 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-3 text-center text-sm opacity-90">
           <p>© {new Date().getFullYear()} Best of Bedz. All rights reserved.</p>
+          <p className="font-semibold text-[#F7DD6E]">
+            The art of property management. The science of maximum returns.
+          </p>
         </div>
       </div>
     </footer>

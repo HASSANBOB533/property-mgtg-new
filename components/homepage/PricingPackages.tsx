@@ -26,7 +26,7 @@ export default function PricingPackages() {
     <section id="pricing" className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-[#2F63AD] mb-4">
+          <h2 className="text-4xl font-bold text-[#2861AD] mb-4">
             {t('title')}
           </h2>
           <p className="text-lg text-gray-600">{t('subtitle')}</p>
@@ -42,22 +42,22 @@ export default function PricingPackages() {
               <div
                 key={pkg.key}
                 className={`relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl ${
-                  pkg.featured ? 'ring-2 ring-[#2F63AD] scale-105' : ''
+                  pkg.featured ? 'ring-2 ring-[#2861AD] scale-105' : ''
                 }`}
               >
                 {pkg.featured && (
-                  <div className="bg-[#2F63AD] text-white text-center py-2 px-4 text-sm font-semibold">
+                  <div className="bg-[#2861AD] text-white text-center py-2 px-4 text-sm font-semibold">
                     {t('performance.popular')}
                   </div>
                 )}
 
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-[#2F63AD] mb-3">
+                  <h3 className="text-2xl font-bold text-[#2861AD] mb-3">
                     {t(`${pkg.key}.title`)}
                   </h3>
                   
                   <div className="mb-6">
-                    <span className="text-4xl font-bold text-[#2F63AD]">
+                    <span className="text-4xl font-bold text-[#2861AD]">
                       {t(`${pkg.key}.percentage`)}
                     </span>
                   </div>
@@ -66,7 +66,7 @@ export default function PricingPackages() {
                     {features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <svg
-                          className="w-5 h-5 text-[#2F63AD] flex-shrink-0 mt-0.5"
+                          className="w-5 h-5 text-[#2861AD] flex-shrink-0 mt-0.5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -89,8 +89,8 @@ export default function PricingPackages() {
                     href={`/${locale}/list-property`}
                     className={`block w-full text-center px-6 py-3 rounded-lg font-semibold transition-all ${
                       pkg.featured
-                        ? 'bg-[#2F63AD] text-white hover:bg-[#2F63AD]/90 shadow-md'
-                        : 'bg-white text-[#2F63AD] border-2 border-[#2F63AD] hover:bg-[#2F63AD] hover:text-white'
+                        ? 'bg-[#2861AD] text-white hover:bg-[#2861AD]/90 shadow-md'
+                        : 'bg-white text-[#2861AD] border-2 border-[#2861AD] hover:bg-[#2861AD] hover:text-white'
                     }`}
                   >
                     Get Started

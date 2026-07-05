@@ -3,5 +3,6 @@
   "/[locale]/list-property/page": "/[locale]/list-property",
   "/[locale]/page": "/[locale]",
   "/_global-error/page": "/_global-error",
-  "/_not-found/page": "/_not-found"
+  "/_not-found/page": "/_not-found",
+  "/api/submit-property/route": "/api/submit-property"
 }

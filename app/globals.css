@@ -1,17 +1,59 @@
 @import "tailwindcss";
 
+/* Brand typeface — Mundial Narrow, self-hosted (Arabic falls back to system) */
+@font-face {
+  font-family: "Mundial Narrow";
+  src: url("/fonts/MundialNarrow-Light-BF67624ba5a4e5e.woff2") format("woff2"),
+       url("/fonts/MundialNarrow-Light-BF67624ba5a4e5e.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mundial Narrow";
+  src: url("/fonts/MundialNarrow-Regular-BF67624ba586d07.woff2") format("woff2"),
+       url("/fonts/MundialNarrow-Regular-BF67624ba586d07.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mundial Narrow";
+  src: url("/fonts/MundialNarrow-Medium-BF67624ba5a687e.woff2") format("woff2"),
+       url("/fonts/MundialNarrow-Medium-BF67624ba5a687e.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mundial Narrow";
+  src: url("/fonts/MundialNarrow-SemiBold-BF67624ba5a98c1.woff2") format("woff2"),
+       url("/fonts/MundialNarrow-SemiBold-BF67624ba5a98c1.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mundial Narrow";
+  src: url("/fonts/MundialNarrow-Bold-BF67624ba588290.woff2") format("woff2"),
+       url("/fonts/MundialNarrow-Bold-BF67624ba588290.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --color-cream: #F9F4D0;
-  --color-blue-primary: #0e56a4;
-  --color-blue-primary-dark: #0a3f79;
-  --color-green-primary: #00AB89;
-  --color-yellow-primary: #e9c500;
-  --color-yellow-primary-dark: #e3b600;
-  --color-red-accent: #d64045;
-  --color-dark-text: #1b365d;
+  --color-cream: #EEF0DC;
+  --color-blue-primary: #2861AD;
+  --color-blue-primary-dark: #1D4A85;
+  --color-green-primary: #00A569;
+  --color-yellow-primary: #F7DD6E;
+  --color-yellow-primary-dark: #EBCB4E;
+  --color-red-accent: #DE2A37;
+  --color-dark-text: #1F2D26;
   --color-light-blue-bg: #f2f7fc;
   
-  --font-family-sans: Inter, Poppins, system-ui, sans-serif;
+  --font-sans: "Mundial Narrow", system-ui, sans-serif;
 }
 
 @layer base {

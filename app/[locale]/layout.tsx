@@ -67,7 +67,7 @@ export default async function LocaleLayout({
         <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#2F63AD" />
+        <meta name="theme-color" content="#2861AD" />
         
         {/* Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

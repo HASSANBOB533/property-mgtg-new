@@ -58,6 +58,12 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/submit-property",
+      "regex": "^/api/submit\\-property(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/submit\\-property(?:/)?$"
     }
   ],
   "dataRoutes": [],

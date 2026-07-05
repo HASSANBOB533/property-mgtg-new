@@ -112,15 +112,15 @@ See [GOOGLE_SHEETS_SETUP.md](./GOOGLE_SHEETS_SETUP.md) for detailed setup instru
 
 Official BOB brand palette:
 
-- **Primary Blue**: `#0e56a4` (primary actions, links)
-- **Blue Dark**: `#0a3f79` (hover states)
-- **Yellow Accent**: `#e9c500` (highlights, CTAs)
-- **Yellow Dark**: `#e3b600` (hover states)
-- **Light Cream**: `#F9F4D0` (primary background)
+- **Primary Blue**: `#2861AD` (primary actions, links)
+- **Blue Dark**: `#1D4A85` (hover states)
+- **Yellow Accent**: `#F7DD6E` (highlights, CTAs)
+- **Yellow Dark**: `#EBCB4E` (hover states)
+- **Light Cream**: `#EEF0DC` (primary background)
 - **Light Blue BG**: `#f2f7fc` (alternative background)
-- **Green (Success)**: `#00AB89` (success states, "after" images)
-- **Red Accent**: `#d64045` (errors, "before" images)
-- **Dark Text**: `#1b365d` (body text, headings)
+- **Green (Success)**: `#00A569` (success states, "after" images)
+- **Red Accent**: `#DE2A37` (errors, "before" images)
+- **Dark Text**: `#1F2D26` (body text, headings)
 
 See [BRAND_GUIDELINES.md](./BRAND_GUIDELINES.md) for complete design specifications.
 

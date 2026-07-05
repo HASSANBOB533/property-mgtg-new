@@ -34,13 +34,13 @@ This document summarizes all the changes made to fix the issues outlined in the 
 **Solution Implemented**:
 - ✅ Updated `app/globals.css` with official BOB brand colors:
   ```css
-  --color-blue-primary: #0e56a4 (from #003580)
-  --color-blue-primary-dark: #0a3f79 (new)
-  --color-yellow-primary: #e9c500 (from #f9de6f)
-  --color-yellow-primary-dark: #e3b600 (new)
-  --color-cream: #F9F4D0 (from #f0f1dd)
+  --color-blue-primary: #2861AD (from #003580)
+  --color-blue-primary-dark: #1D4A85 (new)
+  --color-yellow-primary: #F7DD6E (from #f9de6f)
+  --color-yellow-primary-dark: #EBCB4E (new)
+  --color-cream: #EEF0DC (from #f0f1dd)
   --color-light-blue-bg: #f2f7fc (new)
-  --color-green-primary: #00AB89 (from #00a66a)
+  --color-green-primary: #00A569 (from #00a66a)
   ```
 - ✅ All components now use consistent brand colors
 - ✅ Hover states added for all interactive elements

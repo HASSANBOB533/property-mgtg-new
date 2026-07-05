@@ -17,7 +17,7 @@ export default function WhyChooseUs() {
   return (
     <section className="py-10 md:py-12 bg-cream">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F63AD] mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2861AD] mb-6">
           {t('title')}
         </h2>
 
@@ -32,10 +32,10 @@ export default function WhyChooseUs() {
                   {reason.icon}
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-[#2F63AD] mb-2">
+              <h3 className="text-xl font-bold text-[#2861AD] mb-2">
                 {t(`${reason.key}.title`)}
               </h3>
-              <p className="text-[#2F63AD]/70">
+              <p className="text-[#2861AD]/70">
                 {t(`${reason.key}.description`)}
               </p>
             </div>
