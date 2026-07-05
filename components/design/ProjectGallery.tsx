@@ -145,9 +145,9 @@ function BeforeAfterSlider({
         onMouseDown={handleMouseDown}
         onTouchStart={handleMouseDown}
       >
-        <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg">
+        <div className="absolute left-1/2 top-1/2 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg md:h-10 md:w-10">
           <svg
-            className="h-6 w-6 rotate-90 text-[#2861AD]"
+            className="h-5 w-5 rotate-90 text-[#2861AD] md:h-6 md:w-6"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -161,10 +161,10 @@ function BeforeAfterSlider({
       </div>
 
       {/* Labels */}
-      <div className="absolute left-4 top-4 rounded-full bg-[#122F5A]/80 px-3 py-1 text-sm font-semibold text-white">
+      <div className="absolute left-2 top-2 rounded-full bg-[#122F5A]/80 px-2 py-0.5 text-[11px] font-semibold text-white md:left-4 md:top-4 md:px-3 md:py-1 md:text-sm">
         {labels.before}
       </div>
-      <div className="absolute right-4 top-4 rounded-full bg-[#F7DD6E] px-3 py-1 text-sm font-semibold text-[#122F5A]">
+      <div className="absolute right-2 top-2 rounded-full bg-[#F7DD6E] px-2 py-0.5 text-[11px] font-semibold text-[#122F5A] md:right-4 md:top-4 md:px-3 md:py-1 md:text-sm">
         {labels.after}
       </div>
     </div>
@@ -180,49 +180,44 @@ export default function ProjectGallery() {
   };
 
   return (
-    <section className="bg-[#EEF0DC]/50 py-14 md:py-20">
+    <section className="bg-[#EEF0DC]/50 py-10 md:py-20">
       <div className="container mx-auto px-4">
         <h2 className="mb-3 text-center text-3xl font-bold text-[#1F2D26] md:text-4xl">
           {t('title')}
         </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
+        <p className="mx-auto mb-8 max-w-2xl text-center text-gray-600 md:mb-12">
           {t('dragHint')}
         </p>
 
         {PROJECTS.map((project) => (
-          <div key={project.key} className="mx-auto mb-14 max-w-6xl last:mb-0">
-            {/* Project header */}
-            <div className="mb-6 rounded-2xl border border-[#EBECE2] bg-white p-6">
-              <h3 className="mb-3 text-2xl font-bold text-[#1F2D26]">
+          <div key={project.key} className="mx-auto mb-10 max-w-6xl last:mb-0 md:mb-14">
+            {/* Project header — compact chips on mobile, labeled row on desktop */}
+            <div className="mb-4 rounded-2xl border border-[#EBECE2] bg-white p-4 md:mb-6 md:p-6">
+              <h3 className="mb-3 text-xl font-bold text-[#1F2D26] md:text-2xl">
                 {t(`${project.key}.title`)}
               </h3>
-              <div className="grid gap-3 text-sm text-gray-600 md:grid-cols-3">
-                <div className="flex items-center gap-2">
-                  <BrandIcon name="mapPin" className="h-4.5 w-4.5 shrink-0 text-[#2861AD]" />
-                  <span>
-                    <span className="font-semibold text-[#1F2D26]">{t('location')}:</span>{' '}
-                    {t(`${project.key}.location`)}
+              <div className="flex flex-wrap gap-2 md:gap-3">
+                {(
+                  [
+                    {icon: 'mapPin', label: t('location'), value: t(`${project.key}.location`)},
+                    {icon: 'home', label: t('type'), value: t(`${project.key}.type`)},
+                    {icon: 'palette', label: t('style'), value: t(`${project.key}.style`)},
+                  ] as const
+                ).map((meta) => (
+                  <span
+                    key={meta.icon}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-[#EEF0DC]/70 px-3 py-1 text-xs text-[#1F2D26] md:text-sm"
+                  >
+                    <BrandIcon name={meta.icon} className="h-4 w-4 shrink-0 text-[#2861AD]" />
+                    <span className="hidden font-semibold md:inline">{meta.label}:</span>
+                    {meta.value}
                   </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <BrandIcon name="home" className="h-4.5 w-4.5 shrink-0 text-[#2861AD]" />
-                  <span>
-                    <span className="font-semibold text-[#1F2D26]">{t('type')}:</span>{' '}
-                    {t(`${project.key}.type`)}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <BrandIcon name="palette" className="h-4.5 w-4.5 shrink-0 text-[#2861AD]" />
-                  <span>
-                    <span className="font-semibold text-[#1F2D26]">{t('style')}:</span>{' '}
-                    {t(`${project.key}.style`)}
-                  </span>
-                </div>
+                ))}
               </div>
             </div>
 
-            {/* Before/after sliders */}
-            <div className="grid gap-6 md:grid-cols-2">
+            {/* Before/after sliders — 2-up on mobile to halve the scroll */}
+            <div className="grid grid-cols-2 gap-3 md:gap-6">
               {project.rooms.map((room) => {
                 const roomLabel = t(`${project.key}.rooms.${room.roomKey}`);
                 return (
@@ -233,7 +228,9 @@ export default function ProjectGallery() {
                       alt={`${t(`${project.key}.title`)} — ${roomLabel}`}
                       labels={labels}
                     />
-                    <p className="mt-3 text-center font-medium text-[#1F2D26]">{roomLabel}</p>
+                    <p className="mt-1.5 text-center text-xs font-medium text-[#1F2D26] md:mt-3 md:text-base">
+                      {roomLabel}
+                    </p>
                   </div>
                 );
               })}

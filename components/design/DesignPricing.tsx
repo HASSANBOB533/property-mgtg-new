@@ -7,9 +7,9 @@ export default function DesignPricing() {
   const t = useTranslations('design.pricing');
 
   return (
-    <section className="bg-white py-14 md:py-20">
+    <section className="bg-white py-10 md:py-20">
       <div className="container mx-auto px-4">
-        <h2 className="mb-10 text-center text-3xl font-bold text-[#1F2D26] md:text-4xl">
+        <h2 className="mb-8 text-center text-3xl font-bold text-[#1F2D26] md:mb-10 md:text-4xl">
           {t('title')}
         </h2>
 

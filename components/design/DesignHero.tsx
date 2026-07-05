@@ -1,37 +1,41 @@
 'use client';
 
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
 import Image from 'next/image';
+import Link from 'next/link';
 import {useState, useEffect} from 'react';
+
+const SLIDES = [
+  '/images/carousel-1.jpg',
+  '/images/carousel-2.jpg',
+  '/images/carousel-3.jpg',
+  '/images/carousel-4.jpg',
+  '/images/carousel-5.jpg',
+  '/images/carousel-6.jpg',
+];
 
 export default function DesignHero() {
   const t = useTranslations('design.hero');
+  const ts = useTranslations('services');
+  const tn = useTranslations('nav');
+  const locale = useLocale();
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    '/images/carousel-1.jpg',
-    '/images/carousel-2.jpg',
-    '/images/carousel-3.jpg',
-    '/images/carousel-4.jpg',
-    '/images/carousel-5.jpg',
-    '/images/carousel-6.jpg',
-  ];
 
   // Auto-advance carousel every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, []);
 
   return (
-    <section className="relative h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Carousel Images */}
-      {slides.map((slide, index) => (
+    <section className="relative flex h-[460px] items-center justify-center overflow-hidden md:h-[600px]">
+      {/* Carousel images */}
+      {SLIDES.map((slide, index) => (
         <div
-          key={index}
+          key={slide}
           className={`absolute inset-0 transition-opacity duration-1000 ${
             index === currentSlide ? 'opacity-100 z-0' : 'opacity-0 z-0'
           }`}
@@ -49,33 +53,42 @@ export default function DesignHero() {
       ))}
 
       {/* Overlay for text readability — brand ink, not plain black */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#122F5A]/80 via-[#122F5A]/35 to-[#122F5A]/45 z-[1]"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#122F5A]/85 via-[#122F5A]/35 to-[#122F5A]/45 z-[1]"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="mb-3 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#F7DD6E] drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+          <p className="mb-3 flex items-center justify-center gap-3 text-[13px] font-semibold uppercase tracking-[0.24em] text-[#F7DD6E] drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+            <span className="inline-block h-px w-8 bg-[#F7DD6E]/70" aria-hidden />
             Best of Bedz · BOB Designs
+            <span className="inline-block h-px w-8 bg-[#F7DD6E]/70" aria-hidden />
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+          <h1 className="mb-4 text-4xl font-bold leading-tight text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] md:text-5xl lg:text-6xl">
             {t('title')}
           </h1>
-          <p className="text-lg md:text-xl text-white/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+          <p className="mb-2 text-lg italic text-[#F7DD6E] drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] md:text-xl">
+            {ts('designs.slogan')}
+          </p>
+          <p className="mb-7 text-base text-white/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] md:text-lg">
             {t('subtitle')}
           </p>
+          <Link
+            href={`/${locale}/list-property`}
+            className="inline-block rounded-full bg-[#F7DD6E] px-8 py-3.5 text-base font-bold text-[#122F5A] shadow-xl transition-colors hover:bg-[#EBCB4E]"
+          >
+            {tn('listProperty')}
+          </Link>
         </div>
       </div>
 
-      {/* Carousel Indicators */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
-        {slides.map((_, index) => (
+      {/* Carousel indicators */}
+      <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+        {SLIDES.map((slide, index) => (
           <button
-            key={index}
+            key={slide}
             onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? 'bg-white w-8'
-                : 'bg-white/50 hover:bg-white/75'
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentSlide ? 'w-8 bg-[#F7DD6E]' : 'w-2 bg-white/50 hover:bg-white/75'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
