@@ -3,15 +3,15 @@
 import {useTranslations, useLocale} from 'next-intl';
 import Link from 'next/link';
 
+const PACKAGES = [
+  {key: 'marketing', featured: false},
+  {key: 'performance', featured: true},
+  {key: 'allInclusive', featured: false},
+] as const;
+
 export default function PricingPackages() {
   const t = useTranslations('pricing');
   const locale = useLocale();
-
-  const packages = [
-    {key: 'marketing', featured: false},
-    {key: 'performance', featured: true},
-    {key: 'allInclusive', featured: false},
-  ];
 
   return (
     <section id="pricing" className="scroll-mt-24 bg-white py-10 md:py-20">
@@ -26,73 +26,84 @@ export default function PricingPackages() {
           <p className="text-lg text-gray-600">{t('subtitle')}</p>
         </div>
 
-        {/* Mobile: swipeable snap carousel · Desktop: 3-up grid */}
-        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-auto md:grid md:max-w-6xl md:snap-none md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pb-0">
-          {packages.map((pkg) => {
+        {/* Mobile: swipeable snap carousel · Desktop: one rate-card panel, three columns */}
+        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-auto md:grid md:max-w-6xl md:snap-none md:grid-cols-3 md:gap-0 md:overflow-visible md:rounded-3xl md:px-0 md:pb-0 md:shadow-lg md:ring-1 md:ring-[#EBECE2]">
+          {PACKAGES.map((pkg) => {
             const features = Array.from({length: 5}, (_, i) =>
               t(`${pkg.key}.features.${i}`)
             );
+            const dark = pkg.featured;
 
             return (
               <div
                 key={pkg.key}
-                className={`relative flex min-w-[82%] shrink-0 snap-center flex-col overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:shadow-xl sm:min-w-[55%] md:min-w-0 md:shrink ${
-                  pkg.featured
-                    ? 'border-2 border-[#2861AD] shadow-lg md:-my-3'
-                    : 'border border-[#EBECE2] shadow-sm'
+                className={`relative flex min-w-[82%] shrink-0 snap-center flex-col rounded-2xl p-7 sm:min-w-[55%] md:min-w-0 md:shrink md:rounded-none md:p-9 ${
+                  dark
+                    ? 'bg-gradient-to-b from-[#2861AD] to-[#1D4A85] text-white shadow-lg ring-1 ring-[#2861AD] md:rounded-2xl md:shadow-2xl md:ring-0 md:[transform:scale(1.03)]'
+                    : 'bg-white ring-1 ring-[#EBECE2] md:ring-0'
                 }`}
               >
-                {pkg.featured && (
-                  <div className="bg-[#F7DD6E] px-4 py-2 text-center text-sm font-bold text-[#122F5A]">
-                    {t('performance.popular')}
-                  </div>
-                )}
-
-                <div className="flex flex-1 flex-col p-8">
-                  <h3 className="mb-3 text-2xl font-bold text-[#1F2D26]">
-                    {t(`${pkg.key}.title`)}
-                  </h3>
-
-                  <div className="mb-6">
-                    <span className="text-3xl font-bold tabular-nums text-[#2861AD]">
-                      {t(`${pkg.key}.percentage`)}
-                    </span>
-                  </div>
-
-                  <ul className="mb-8 flex-1 space-y-4">
-                    {features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <svg
-                          className="mt-0.5 h-5 w-5 shrink-0 text-[#00A569]"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-sm leading-relaxed text-gray-700">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link
-                    href={`/${locale}/list-property`}
-                    className={`block w-full rounded-full px-6 py-3 text-center font-bold transition-colors ${
-                      pkg.featured
-                        ? 'bg-[#2861AD] text-white shadow-md hover:bg-[#1D4A85]'
-                        : 'border-2 border-[#2861AD] bg-white text-[#2861AD] hover:bg-[#2861AD] hover:text-white'
+                {/* Column header */}
+                <div className="mb-1 flex items-center justify-between gap-2">
+                  <p
+                    className={`text-[13px] font-semibold uppercase tracking-[0.2em] ${
+                      dark ? 'text-[#F7DD6E]' : 'text-[#2861AD]'
                     }`}
                   >
-                    {t('getStarted')}
-                  </Link>
+                    {t(`${pkg.key}.title`)}
+                  </p>
+                  {dark && (
+                    <span className="rounded-full bg-[#F7DD6E] px-3 py-1 text-xs font-bold text-[#122F5A]">
+                      {t('performance.popular')}
+                    </span>
+                  )}
                 </div>
+
+                {/* Rate */}
+                <div className="mb-6 mt-3">
+                  <span
+                    className={`block text-5xl font-bold leading-none tabular-nums ${
+                      dark ? 'text-white' : 'text-[#1F2D26]'
+                    }`}
+                  >
+                    {t(`${pkg.key}.rate`)}
+                  </span>
+                  <span className={`mt-2 block text-sm font-medium ${dark ? 'text-white/70' : 'text-gray-500'}`}>
+                    {t(`${pkg.key}.basis`)}
+                  </span>
+                </div>
+
+                <div className={`mb-6 h-px w-full ${dark ? 'bg-white/20' : 'bg-[#EBECE2]'}`} />
+
+                {/* Features */}
+                <ul className="mb-8 flex-1 space-y-3.5">
+                  {features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <svg
+                        className={`mt-0.5 h-5 w-5 shrink-0 ${dark ? 'text-[#F7DD6E]' : 'text-[#00A569]'}`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className={`text-sm leading-relaxed ${dark ? 'text-white/90' : 'text-gray-700'}`}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href={`/${locale}/list-property`}
+                  className={`block w-full rounded-full px-6 py-3 text-center font-bold transition-colors ${
+                    dark
+                      ? 'bg-[#F7DD6E] text-[#122F5A] shadow-md hover:bg-[#EBCB4E]'
+                      : 'border-2 border-[#2861AD] bg-white text-[#2861AD] hover:bg-[#2861AD] hover:text-white'
+                  }`}
+                >
+                  {t('getStarted')}
+                </Link>
               </div>
             );
           })}

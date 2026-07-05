@@ -81,7 +81,8 @@
     "getStarted": "Get Started",
     "marketing": {
       "title": "Marketing Only",
-      "percentage": "10-15%",
+      "rate": "10–15%",
+      "basis": "of booking revenue",
       "features": [
         "Multi-platform listing (Airbnb, Booking.com, Vrbo)",
         "Professional photography",
@@ -92,7 +93,8 @@
     },
     "performance": {
       "title": "Performance",
-      "percentage": "25% of Net Revenue",
+      "rate": "25%",
+      "basis": "of net revenue",
       "popular": "Most Popular",
       "features": [
         "Everything in Marketing",
@@ -104,7 +106,8 @@
     },
     "allInclusive": {
       "title": "All-Inclusive",
-      "percentage": "30% of Total Revenue",
+      "rate": "30%",
+      "basis": "of total revenue",
       "features": [
         "Everything in Performance",
         "ALL operating costs covered",
@@ -191,16 +194,40 @@
   },
   "comparison": {
     "title": "Best of Bedz vs a Typical Agency",
-    "feature": "Feature",
+    "subtitle": "Not all management is the same. Here is exactly where the difference shows.",
     "bob": "Best of Bedz",
     "typical": "Typical Agency",
-    "features": {
-      "technology": "Technology Platform",
-      "pricing": "Dynamic Pricing",
-      "support": "24/7 Support",
-      "transparency": "Full Transparency",
-      "multiOTA": "Multi-Platform Management",
-      "superhost": "Superhost Guarantee"
+    "rows": {
+      "technology": {
+        "title": "Technology Platform",
+        "bob": "Enterprise hospitality stack — channel manager, smart pricing engine and a live owner portal",
+        "typical": "Manual calendars and spreadsheets"
+      },
+      "pricing": {
+        "title": "Pricing Strategy",
+        "bob": "Rates adjusted daily to demand, seasonality and local events",
+        "typical": "One static rate all year round"
+      },
+      "support": {
+        "title": "Guest Support",
+        "bob": "24/7 guest support backed by an on-the-ground operations team",
+        "typical": "Office hours only, slow responses"
+      },
+      "transparency": {
+        "title": "Transparency & Reporting",
+        "bob": "Real-time owner dashboard and monthly statements, every expense itemized",
+        "typical": "End-of-period totals — if you ask"
+      },
+      "multiOTA": {
+        "title": "Distribution",
+        "bob": "Airbnb, Booking.com, Vrbo, Expedia, Agoda and Trip.com — one synced calendar, zero double bookings",
+        "typical": "One or two platforms, managed separately"
+      },
+      "superhost": {
+        "title": "Quality Standards",
+        "bob": "Superhost standards on every stay — professional housekeeping and quality inspections",
+        "typical": "No quality benchmark to answer to"
+      }
     }
   },
   "finalCTA": {
